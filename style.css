@@ -1,0 +1,26 @@
+body {
+	background: #2E2633;
+}
+
+#navbar {
+	padding-top: 7px;
+	padding-bottom: 7px;
+	padding-right: 10px;
+	background: #DCE9BE; /*change*/
+	text-align: right;
+	color: #555152; /* change*/
+	width: auto;
+	height: auto;
+	/*display: block;*/
+	font-family: 'Hind', sans-serif;
+	font-width: 500;
+}
+
+a:link {
+	text-decoration: none;
+	color: #555152
+}
+
+a:visited {
+	color: #555152;
+}
