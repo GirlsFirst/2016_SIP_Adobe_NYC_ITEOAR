@@ -1,5 +1,8 @@
 body {
 	background: #2E2633;
+	color: white;
+	font-family: 'Hind', sans-serif;
+	font-width: 500;
 }
 
 #navbar {
@@ -18,7 +21,7 @@ body {
 
 a:link {
 	text-decoration: none;
-	color: #555152
+	color: #555152;
 }
 
 a:visited {
