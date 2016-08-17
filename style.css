@@ -21,6 +21,8 @@ body {
 
 #unhcr {
 	display: block;
+	height: 10%;
+	width: auto;
 }
 
 a:link {
