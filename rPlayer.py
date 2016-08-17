@@ -62,4 +62,40 @@ class player(pygame.sprite.Sprite):
 
 		#move left/right
 		self.rect.x += self.speedX
-		pos = self.rect.x + 
+		pos = self.rect.x + level.worldShift
+		if self.direction == "R":
+			frame = (pos//30) % len(self.walkingFramesRight)
+			self.image = self.walkingFramesRight[frame]
+		else:
+			frame = (pos//30) % len(self.walkingFramesLeft)
+			self.iamge = self.walkingFramesLeft[frame]
+
+		#move up and down
+		self.rect.y += self.speedY
+
+	def calc_grav(self):
+
+		#calc effect of gravity
+		if self.speedY == 0:
+			self.speedY = 1
+		else:
+			self.speedY += .5
+
+		#is on ground?
+		if self.rect.y >= constantVars.screenHeight - self.rect.height and self.speedY >= 0:
+			self.speedY = 0
+			self.rect.y = constantVars.screenHeight - self.rect.height
+
+	def jump(self):
+		self.speedY = -10
+
+	def goLeft(self):
+		self.speedX = -10
+		self.direction = "L"
+
+	def goRight(self):
+		self.speedX = 10
+		self.direction = "R"
+
+	def stop(self):
+		self.speedX = 0
