@@ -33,6 +33,7 @@ body {
 	font-width: 500;
 }
 
+/*Shormie's Code*/
 h1 {
    font-size: 250%
 }
@@ -53,7 +54,7 @@ p {
 	transform-style: inherit;
 }
 
-img {
+/*img {
   position: absolute;
   top: 50%;
   left: 35%;
@@ -64,11 +65,11 @@ img {
   border-radius: 5px;
   background: rgba(240,230,220, .7);
   box-shadow: 0 0 8px rgba(0, 0, 0, .7);
-}
+}*/
 
-img:last-of-type {
+/*img:last-of-type {
   transform: translateZ(.4px) scale(.6) translateX(-104%) translateY(-40%) rotate(-5deg);
-}
+}*/
 
 .slide:before {
   content: "";
