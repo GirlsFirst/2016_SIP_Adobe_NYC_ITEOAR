@@ -25,6 +25,16 @@ body {
 	width: auto;
 }
 
+.logo2{
+	display:block;
+	padding-left:20%;
+}
+
+.logodos {
+	padding-right: 8%;
+	width: auto;
+}
+
 a:link {
 	text-decoration: none;
 	color: #555152;
