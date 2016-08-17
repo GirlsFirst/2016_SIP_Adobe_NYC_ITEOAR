@@ -89,27 +89,10 @@ a:visited {
 .bg-two {background-image: url(http://fair.org/wp-content/uploads/2015/09/Syrian-refugees-landing.jpg);}
 .bg-three {background-image: url(http://i.dailymail.co.uk/i/pix/2014/12/25/2442A63A00000578-2887019-image-m-20_1419525768194.jpg);}
 .bg-four {background-image: url(http://i.dailymail.co.uk/i/pix/2014/12/25/2442A4EE00000578-2887019-image-m-23_1419525823913.jpg);}
-/*.bg-five {background-image: url(http://www.travelandleisure.com/sites/default/files/styles/tnl_redesign_article_landing_page/public/1453920892/DUBAI-554088081-ABOVE0116.jpg?itok=dcoZnCrc);}
-.bg-six {background-image: url(http://blog.whitepages.com/wp-content/uploads/2015/04/san-franc.jpg);}*/
 
 
-/*a {
-    display: none;
-    font-size: 35px;
-    color: #ffffff !important;
-    font-family: 'Hind', sans-serif;
-    text-align: center;
-    margin: auto;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    height: 50px;
-    cursor: pointer;
-    /*text-decoration: none;*/
-}
-*/
+
+
 .parent:hover .child, .parent:focus .child {
     -ms-transform: scale(1.2);
     -moz-transform: scale(1.2);
@@ -177,7 +160,7 @@ a:visited {
 
 }
 
-h1{
+.myH{
 	 font-size: 80px;
     color: #ffffff !important;
     font-family: 'Hind', sans-serif;
