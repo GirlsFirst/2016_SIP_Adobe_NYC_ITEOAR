@@ -27,3 +27,6 @@ window.smoothScrollTo = (function () {
     return timer;
   }
 }())
+
+// put this in html
+// onclick="smoothScrollTo(document.getElementById('aboutme').offsetTop
