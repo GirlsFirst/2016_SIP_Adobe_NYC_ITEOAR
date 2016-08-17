@@ -1,15 +1,13 @@
-<<<<<<< HEAD
+
 html {
   height: 100%;
   overflow: hidden;
 }
 body {
-=======
-.bodyIndex {
->>>>>>> a249be906ca397837ad11c2f9d5376aa5cb21aa9
+
 	background: #2E2633;
 	margin:0;
-  	padding:0;
+  padding:0;
 	perspective: 1px;
 	transform-style: preserve-3d;
  	height: 100%;
@@ -134,7 +132,8 @@ img:last-of-type {
 
 #slide4 {
   background: #222;
-=======
+}
+
 .logo1 {
 	display: inline;
 	padding-left: 8%;
@@ -281,5 +280,4 @@ a:visited {
     color: #ffffff !important;
     font-family: 'Hind', sans-serif;
     text-align: center;
->>>>>>> a9397ddc9819d5f1ad6dbf8acbd47c745b4423cb
 }
