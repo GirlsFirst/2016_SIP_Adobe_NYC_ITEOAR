@@ -19,6 +19,10 @@ body {
 	font-width: 500;
 }
 
+#unhcr {
+	display: block;
+}
+
 a:link {
 	text-decoration: none;
 	color: #555152;
