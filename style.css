@@ -171,3 +171,9 @@ a:visited {
 
 }
 
+h1{
+	 font-size: 80px;
+    color: #ffffff !important;
+    font-family: 'Hind', sans-serif;
+    text-align: center;
+}
