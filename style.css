@@ -19,9 +19,9 @@ body {
 	font-width: 500;
 }
 
-#unhcr {
-	display: block;
-	height: 10%;
+.logo1 {
+	display: inline;
+	padding-left: 8%;
 	width: auto;
 }
 
