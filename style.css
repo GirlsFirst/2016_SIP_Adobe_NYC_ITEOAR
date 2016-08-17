@@ -1,5 +1,8 @@
 body {
 	background: #2E2633;
+	color: white;
+	font-family: 'Hind', sans-serif;
+	font-width: 500;
 }
 
 #navbar {
@@ -16,9 +19,25 @@ body {
 	font-width: 500;
 }
 
+.logo1 {
+	display: inline;
+	padding-left: 8%;
+	width: auto;
+}
+
+.logo2{
+	display:block;
+	padding-left:20%;
+}
+
+.logodos {
+	padding-right: 8%;
+	width: auto;
+}
+
 a:link {
 	text-decoration: none;
-	color: #555152
+	color: #555152;
 }
 
 a:visited {
