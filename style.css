@@ -31,8 +31,14 @@ body {
 }
 
 .logodos {
-	padding-right: 8%;
+	padding-right: 12%;
 	width: auto;
+    display: inline;
+}
+
+#oxfam {
+    width:auto;
+    display: inline;
 }
 
 a:link {
