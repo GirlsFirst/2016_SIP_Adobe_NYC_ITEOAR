@@ -14,7 +14,7 @@ class Level():
     enemy_list = None
 
     # Background image
-    background = None
+    # background = None
 
     # How far this world has been scrolled left/right
     world_shift = 0
@@ -69,7 +69,7 @@ class Level_01(Level):
         # Call the parent constructor
         Level.__init__(self, player)
 
-        self.background = pygame.image.load("homebg.jpg").convert()
+        # self.background = pygame.image.load("water
         self.background.set_colorkey(constants.WHITE)
         self.level_limit = -2500
 
