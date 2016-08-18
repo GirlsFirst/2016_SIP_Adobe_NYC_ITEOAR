@@ -4,8 +4,7 @@ Simpson College Computer Science
 http://programarcadegames.com/
 http://simpson.edu/computer-science/
 
-Main module for platform scroller example.
-
+Main module for platform scroller exampl
 From:
 http://programarcadegames.com/python_examples/sprite_sheets/
 
