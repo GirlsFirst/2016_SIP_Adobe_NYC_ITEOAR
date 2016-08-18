@@ -33,19 +33,14 @@ body {
 	font-width: 500;
 }
 
-/*Resources code*/
 h1 {
-  font-size: 250%
-
+   font-size: 250%
 }
 
 p {
   font-size: 140%;
   line-height: 150%;
-  color: white;
-}
-#CheckOutGame {
-  text-align: center;
+  color: #333;
 }
 
 .slide {
@@ -58,7 +53,7 @@ p {
 	transform-style: inherit;
 }
 
-/*img {
+img {
   position: absolute;
   top: 50%;
   left: 35%;
@@ -69,11 +64,11 @@ p {
   border-radius: 5px;
   background: rgba(240,230,220, .7);
   box-shadow: 0 0 8px rgba(0, 0, 0, .7);
-}*/
+}
 
-/*img:last-of-type {
+img:last-of-type {
   transform: translateZ(.4px) scale(.6) translateX(-104%) translateY(-40%) rotate(-5deg);
-}*/
+}
 
 .slide:before {
   content: "";
@@ -125,12 +120,12 @@ p {
 }
 
 #slide2 {
-  background-image: url("http://i.cbc.ca/1.3338163.1448664915!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_620/syrian-father-and-son-at-refugee-camp.jpg");
+  background-image: url("http://i.cbc.ca/1.3215851.1441381460!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_620/syrian-refugee-crisis.jpg");
   background-attachment: fixed;
 }
 
 #slide3:before {
-  background-image: url("http://i.cbc.ca/1.3215851.1441381460!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_620/syrian-refugee-crisis.jpg");
+  background-image: url("http://i.cbc.ca/1.3338163.1448664915!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_620/syrian-father-and-son-at-refugee-camp.jpg");
   transform: translateZ(-1px) scale(2);
   z-index:-1;
 }
@@ -138,7 +133,6 @@ p {
 #slide4 {
   background: #222;
 }
-/*End of Resources code*/
 
 .logo1 {
 	display: inline;
@@ -287,7 +281,9 @@ a:visited {
     font-family: 'Hind', sans-serif;
     text-align: center;
 }
+
 .aboutUs {
+  font-family: 'Hind', sans-serif;
+  font-family: 'Hind', sans-serif;
   text-align: center;
-  color: white;
 }
