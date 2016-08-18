@@ -49,8 +49,8 @@ class Player(pygame.sprite.Sprite):
         sprite_sheet4 = SpriteSheet("spriteWalkR2.png")
         image = sprite_sheet4.get_image(34, 19, 32, 73)
         self.walking_frames_r.append(image)
-        sprite_sheet4 = SpriteSheet("spriteWalkR1.png")
-        image = sprite_sheet4.get_image(34, 19, 32, 73)
+        sprite_sheet5 = SpriteSheet("spriteWalkR1.png")
+        image = sprite_sheet5.get_image(34, 19, 32, 73)
         self.walking_frames_r.append(image)
         
         # Load all the right facing images, then flip them
