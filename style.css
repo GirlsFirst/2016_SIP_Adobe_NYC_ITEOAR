@@ -33,9 +33,10 @@ body {
 	font-width: 500;
 }
 
-/*Shormie's Code*/
+/*Resources code*/
 h1 {
-   font-size: 250%
+  font-size: 250%
+
 }
 
 p {
@@ -121,12 +122,12 @@ p {
 }
 
 #slide2 {
-  background-image: url("http://i.cbc.ca/1.3215851.1441381460!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_620/syrian-refugee-crisis.jpg");
+  background-image: url("http://i.cbc.ca/1.3338163.1448664915!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_620/syrian-father-and-son-at-refugee-camp.jpg");
   background-attachment: fixed;
 }
 
 #slide3:before {
-  background-image: url("http://i.cbc.ca/1.3338163.1448664915!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_620/syrian-father-and-son-at-refugee-camp.jpg");
+  background-image: url("http://i.cbc.ca/1.3215851.1441381460!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_620/syrian-refugee-crisis.jpg");
   transform: translateZ(-1px) scale(2);
   z-index:-1;
 }
@@ -134,6 +135,7 @@ p {
 #slide4 {
   background: #222;
 }
+/*End of Resources code*/
 
 .logo1 {
 	display: inline;
@@ -281,4 +283,8 @@ a:visited {
     color: #ffffff !important;
     font-family: 'Hind', sans-serif;
     text-align: center;
+}
+.aboutUs {
+  text-align: center;
+  color: white;
 }
