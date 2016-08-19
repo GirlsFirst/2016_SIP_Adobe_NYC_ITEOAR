@@ -15,9 +15,6 @@ body {
   font-width: 500;
 }
 
-#CheckOutGame {
-  text-align: center;
-}
 
 #navbar {
   padding-top: 7px;
@@ -304,6 +301,7 @@ a:visited {
 #interactive {
   color: white;
 }
+/*Bibliography stuff*/
 #photos {
   color: white;
 }
@@ -311,5 +309,10 @@ a:visited {
   color: white;
 }
 .heading3 {
+  color: white;
+}
+/*index stuff*/
+#CheckOutGame {
+  text-align: center;
   color: white;
 }
