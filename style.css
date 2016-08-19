@@ -118,7 +118,11 @@ p {
 /*End of About Us*/
 /*Start of Resources*/
 #Resources {
+<<<<<<< HEAD
   background-image: url("http://www.youthdigital.com/sca-dev-denali/img/category-Coding.png");
+=======
+  background-image: url("http://edu.stemjobs.com/wp-content/uploads/2015/05/coding.jpg");
+>>>>>>> e6fc0c6c04a245ee26df19efbd89f07cc6ea2281
   background-attachment: fixed;  
 }
 
