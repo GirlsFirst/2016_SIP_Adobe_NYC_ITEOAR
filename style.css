@@ -53,7 +53,7 @@ p {
 	transform-style: inherit;
 }
 
-img {
+/*img {
   position: absolute;
   top: 50%;
   left: 35%;
@@ -68,7 +68,7 @@ img {
 
 img:last-of-type {
   transform: translateZ(.4px) scale(.6) translateX(-104%) translateY(-40%) rotate(-5deg);
-}
+}*/
 
 .slide:before {
   content: "";
@@ -104,7 +104,7 @@ img:last-of-type {
 .header {
   text-align: center;
   font-size: 175%;
-  color: #fff;
+  color: white;
   text-shadow: 0 2px 2px #000;
 }
 
@@ -286,4 +286,8 @@ a:visited {
   font-family: 'Hind', sans-serif;
   font-family: 'Hind', sans-serif;
   text-align: center;
+  color: white;
+}
+#interactive {
+  color: white;
 }
