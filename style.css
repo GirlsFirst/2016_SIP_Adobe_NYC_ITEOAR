@@ -118,7 +118,7 @@ p {
 /*End of About Us*/
 /*Start of Resources*/
 #Resources {
-  background-image: url("http://cyndililkendey.com/wp-content/uploads/main-image.jpg");
+  background-image: url("http://edu.stemjobs.com/wp-content/uploads/2015/05/coding.jpg");
   background-attachment: fixed;  
 }
 
@@ -134,7 +134,7 @@ p {
 }
 
 #IRC:before {
-  background-image: url("http://www.ab-ilan.com/wp-content/uploads/2014/11/IRC.jpgs");
+  background-image: url("http://www.jobimu.com/wp-content/uploads/2016/05/International-Rescue-Committee.jpg");
   transform: translateZ(-1px) scale(2);
   z-index:-1;
 }
