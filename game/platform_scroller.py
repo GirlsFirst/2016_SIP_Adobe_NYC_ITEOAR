@@ -29,6 +29,7 @@ import constants
 import levels
 
 from player import Player
+# from player import Boat
 
 def main():
     """ Main Program """
@@ -45,8 +46,11 @@ def main():
 
     # Create all the levels
     level_list = []
+    # levelNow = 1
     level_list.append(levels.Level_01(player))
+    # levelNow = 2
     level_list.append(levels.Level_02(player))
+    # levelNow = 3
     level_list.append(levels.Level_03(player))
 
     # Set the current level
