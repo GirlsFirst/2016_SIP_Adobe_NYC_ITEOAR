@@ -1,39 +1,44 @@
-
 html {
   height: 100%;
   overflow: hidden;
 }
 body {
-
-	background: #2E2633;
-	margin:0;
+  background: #2E2633;
+  margin:0;
   padding:0;
-	perspective: 1px;
-	transform-style: preserve-3d;
- 	height: 100%;
- 	overflow-y: scroll;
- 	overflow-x: hidden;
- 	font-family: 'Hind', sans-serif;
-	color: white;
-	font-family: 'Hind', sans-serif;
-	font-width: 500;
+  perspective: 1px;
+  transform-style: preserve-3d;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-family: 'Hind', sans-serif;
+  font-width: 500;
+}
+h1 {
+   font-size: 250%
+}
+
+p {
+  font-size: 140%;
+  line-height: 150%;
+  color: #333;
 }
 
 #navbar {
-	padding-top: 7px;
-	padding-bottom: 7px;
-	padding-right: 10px;
-	background: #DCE9BE; /*change*/
-	text-align: right;
-	color: #555152; /* change*/
-	width: auto;
-	height: auto;
-	/*display: block;*/
-	font-family: 'Hind', sans-serif;
-	font-width: 500;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-right: 10px;
+  background: #DCE9BE; /*change*/
+  text-align: right;
+  color: #555152; /* change*/
+  width: auto;
+  height: auto;
+  /*display: block;*/
+  font-family: 'Hind', sans-serif;
+  font-width: 500;
 }
 
-/*Resources code*/
+/*Parallax Code--please do not touch*/
 h1 {
   font-size: 250%
 
@@ -42,7 +47,7 @@ h1 {
 p {
   font-size: 140%;
   line-height: 150%;
-  color: white;
+  color: #333;
 }
 #CheckOutGame {
   text-align: center;
@@ -55,7 +60,7 @@ p {
   width: 100vw;
   box-sizing: border-box;
   box-shadow: 0 -1px 10px rgba(0, 0, 0, .7);
-	transform-style: inherit;
+  transform-style: inherit;
 }
 
 /*img {
@@ -112,10 +117,10 @@ p {
   color: #fff;
   text-shadow: 0 2px 2px #000;
 }
-
+/*Star of About US*/
 #title {
   background-image: url("https://timedotcom.files.wordpress.com/2014/05/syrian-refugees-turkey-2.jpg?quality=75&strip=color&w=1100");
-   background-attachment: fixed;  
+  background-attachment: fixed;  
 }
 
 #slide1:before {
@@ -138,22 +143,49 @@ p {
 #slide4 {
   background: #222;
 }
+/*End of About Us*/
+/*Start of Resources*/
+#Resources {
+  background-image: url("http://cyndililkendey.com/wp-content/uploads/main-image.jpg");
+  background-attachment: fixed;  
+}
+
+#AmnestyInt:before {
+  background-image: url("http://musicaction.org/wp-content/uploads/2015/04/loring-amnesty-international-logo.jpg");
+  transform: translateZ(-1px) scale(2);
+  z-index:-1;
+}
+
+#SavetheChildren {
+  background-image: url("http://whitebearmusic.net/wp-content/uploads/2014/09/Save-the-Children_0.jpg");
+  background-attachment: fixed;
+}
+
+#IRC:before {
+  background-image: url("http://www.ab-ilan.com/wp-content/uploads/2014/11/IRC.jpgs");
+  transform: translateZ(-1px) scale(2);
+  z-index:-1;
+}
+
+#slide4 {
+  background: #222;
+}
 /*End of Resources code*/
 
 .logo1 {
-	display: inline;
-	padding-left: 8%;
-	width: auto;
+  display: inline;
+  padding-left: 8%;
+  width: auto;
 }
 
 .logo2{
-	display:block;
-	padding-left:20%;
+  display:block;
+  padding-left:20%;
 }
 
 .logodos {
-	padding-right: 12%;
-	width: auto;
+  padding-right: 12%;
+  width: auto;
     display: inline;
 }
 
@@ -163,12 +195,12 @@ p {
 }
 
 a:link {
-	text-decoration: none;
-	color: #555152;
+  text-decoration: none;
+  color: #555152;
 }
 
 a:visited {
-	color: #555152;
+  color: #555152;
 }
 
 .wrapper {
@@ -248,7 +280,7 @@ a:visited {
 }
 
 .number{
-	display: none;
+  display: none;
     font-size: 150px;
     color: #ffffff !important;
     font-family: 'Hind', sans-serif;
@@ -265,7 +297,7 @@ a:visited {
 }
 
 .text {
-	display: none;
+  display: none;
     font-size: 20px;
     color: #ffffff !important;
     font-family: 'Hind', sans-serif;
@@ -282,7 +314,7 @@ a:visited {
 }
 
 .myH{
-	 font-size: 80px;
+   font-size: 80px;
     color: #ffffff !important;
     font-family: 'Hind', sans-serif;
     text-align: center;
