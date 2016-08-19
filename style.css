@@ -14,18 +14,12 @@ body {
   font-family: 'Hind', sans-serif;
   font-width: 500;
 }
-h1 {
-   font-size: 250%
-}
 
-p {
-  font-size: 140%;
-  line-height: 150%;
-  color: #333;
+#CheckOutGame {
+  text-align: center;
 }
 
 #navbar {
-<<<<<<< HEAD
   padding-top: 7px;
   padding-bottom: 7px;
   padding-right: 10px;
@@ -40,21 +34,6 @@ p {
 }
 
 /*Parallax Code--please do not touch*/
-=======
-	padding-top: 7px;
-	padding-bottom: 7px;
-	padding-right: 10px;
-	background: #DCE9BE; /*change*/
-	text-align: right;
-	color: #555152; /* change*/
-	width: auto;
-	height: auto;
-	/*display: block;*/
-	font-family: 'Hind', sans-serif;
-	font-width: 500;
-}
-
->>>>>>> a5bd70125c9372c1b99177aa5ba88819834379a9
 h1 {
    font-size: 250%
 }
@@ -63,12 +42,6 @@ p {
   font-size: 140%;
   line-height: 150%;
   color: #333;
-<<<<<<< HEAD
-}
-#CheckOutGame {
-  text-align: center;
-=======
->>>>>>> a5bd70125c9372c1b99177aa5ba88819834379a9
 }
 
 .slide {
@@ -81,22 +54,6 @@ p {
   transform-style: inherit;
 }
 
-/*img {
-  position: absolute;
-  top: 50%;
-  left: 35%;
-  width: 320px;
-  height: 240px;
-  transform: translateZ(.25px) scale(.75) translateX(-94%) translateY(-100%) rotate(2deg);
-  padding: 10px;
-  border-radius: 5px;
-  background: rgba(240,230,220, .7);
-  box-shadow: 0 0 8px rgba(0, 0, 0, .7);
-}
-
-img:last-of-type {
-  transform: translateZ(.4px) scale(.6) translateX(-104%) translateY(-40%) rotate(-5deg);
-}*/
 
 .slide:before {
   content: "";
@@ -161,7 +118,6 @@ img:last-of-type {
 #slide4 {
   background: #222;
 }
-<<<<<<< HEAD
 /*End of About Us*/
 /*Start of Resources*/
 #Resources {
@@ -190,8 +146,6 @@ img:last-of-type {
   background: #222;
 }
 /*End of Resources code*/
-=======
->>>>>>> a5bd70125c9372c1b99177aa5ba88819834379a9
 
 .logo1 {
   display: inline;
@@ -348,5 +302,14 @@ a:visited {
   color: white;
 }
 #interactive {
+  color: white;
+}
+#photos {
+  color: white;
+}
+#data {
+  color: white;
+}
+.heading3 {
   color: white;
 }
