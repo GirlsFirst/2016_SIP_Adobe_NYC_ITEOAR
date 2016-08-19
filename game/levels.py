@@ -3,6 +3,8 @@ import pygame
 import constants
 import platforms
 
+# levelNow = 0
+
 class Level():
     """ This is a generic super-class used to define a level.
         Create a child class for each level with level-specific
@@ -73,41 +75,43 @@ class Level_01(Level):
         self.background.set_colorkey(constants.WHITE)
         self.level_limit = -4200
 
+        # levelNow = 1
+
 
         # Array with type of platform, and x, y location of the platform.
-        level = [ [platforms.GRASS_LEFT, 500, 500],
-                  [platforms.GRASS_MIDDLE, 570, 500],
-                  [platforms.GRASS_RIGHT, 640, 500],
-                  [platforms.GRASS_LEFT, 800, 400],
-                  [platforms.GRASS_MIDDLE, 870, 400],
-                  [platforms.GRASS_RIGHT, 940, 400],
-                  [platforms.GRASS_LEFT, 1000, 500],
-                  [platforms.GRASS_MIDDLE, 1070, 500],
-                  [platforms.GRASS_RIGHT, 1140, 500],
-                  [platforms.STONE_PLATFORM_LEFT, 1120, 280],
-                  [platforms.STONE_PLATFORM_MIDDLE, 1190, 280],
-                  [platforms.STONE_PLATFORM_RIGHT, 1260, 280],
-                  ]
+        # level = [ [platforms.GRASS_LEFT, 500, 500],
+        #           [platforms.GRASS_MIDDLE, 570, 500],
+        #           [platforms.GRASS_RIGHT, 640, 500],
+        #           [platforms.GRASS_LEFT, 800, 400],
+        #           [platforms.GRASS_MIDDLE, 870, 400],
+        #           [platforms.GRASS_RIGHT, 940, 400],
+        #           [platforms.GRASS_LEFT, 1000, 500],
+        #           [platforms.GRASS_MIDDLE, 1070, 500],
+        #           [platforms.GRASS_RIGHT, 1140, 500],
+        #           [platforms.STONE_PLATFORM_LEFT, 1120, 280],
+        #           [platforms.STONE_PLATFORM_MIDDLE, 1190, 280],
+        #           [platforms.STONE_PLATFORM_RIGHT, 1260, 280],
+        #           ]
 
 
-        # Go through the array above and add platforms
-        for platform in level:
-            block = platforms.Platform(platform[0])
-            block.rect.x = platform[1]
-            block.rect.y = platform[2]
-            block.player = self.player
-            self.platform_list.add(block)
+        # # Go through the array above and add platforms
+        # for platform in level:
+        #     block = platforms.Platform(platform[0])
+        #     block.rect.x = platform[1]
+        #     block.rect.y = platform[2]
+        #     block.player = self.player
+        #     self.platform_list.add(block)
 
-        # Add a custom moving platform
-        block = platforms.MovingPlatform(platforms.STONE_PLATFORM_MIDDLE)
-        block.rect.x = 1350
-        block.rect.y = 280
-        block.boundary_left = 1350
-        block.boundary_right = 1600
-        block.change_x = 1
-        block.player = self.player
-        block.level = self
-        self.platform_list.add(block)
+        # # Add a custom moving platform
+        # block = platforms.MovingPlatform(platforms.STONE_PLATFORM_MIDDLE)
+        # block.rect.x = 1350
+        # block.rect.y = 280
+        # block.boundary_left = 1350
+        # block.boundary_right = 1600
+        # block.change_x = 1
+        # block.player = self.player
+        # block.level = self
+        # self.platform_list.add(block)
 
 
 class Level_02(Level):
@@ -122,6 +126,8 @@ class Level_02(Level):
         self.background = pygame.image.load("Boat Level.png")
         self.background.set_colorkey(constants.WHITE)
         self.level_limit = -4200
+
+        # levelNow = 2
 
 
         # Array with type of platform, and x, y location of the platform.
@@ -173,6 +179,8 @@ class Level_03(Level):
         self.background = pygame.image.load("landLevel.png").convert()
         self.background.set_colorkey(constants.WHITE)
         self.level_limit = -4200
+
+        # levelNow = 3
 
         # Array with type of platform, and x, y location of the platform.
         # level = [ [platforms.STONE_PLATFORM_LEFT, 500, 550],
