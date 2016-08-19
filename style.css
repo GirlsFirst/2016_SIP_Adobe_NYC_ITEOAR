@@ -25,6 +25,7 @@ p {
 }
 
 #navbar {
+<<<<<<< HEAD
   padding-top: 7px;
   padding-bottom: 7px;
   padding-right: 10px;
@@ -39,18 +40,35 @@ p {
 }
 
 /*Parallax Code--please do not touch*/
-h1 {
-  font-size: 250%
+=======
+	padding-top: 7px;
+	padding-bottom: 7px;
+	padding-right: 10px;
+	background: #DCE9BE; /*change*/
+	text-align: right;
+	color: #555152; /* change*/
+	width: auto;
+	height: auto;
+	/*display: block;*/
+	font-family: 'Hind', sans-serif;
+	font-width: 500;
+}
 
+>>>>>>> a5bd70125c9372c1b99177aa5ba88819834379a9
+h1 {
+   font-size: 250%
 }
 
 p {
   font-size: 140%;
   line-height: 150%;
   color: #333;
+<<<<<<< HEAD
 }
 #CheckOutGame {
   text-align: center;
+=======
+>>>>>>> a5bd70125c9372c1b99177aa5ba88819834379a9
 }
 
 .slide {
@@ -74,9 +92,9 @@ p {
   border-radius: 5px;
   background: rgba(240,230,220, .7);
   box-shadow: 0 0 8px rgba(0, 0, 0, .7);
-}*/
+}
 
-/*img:last-of-type {
+img:last-of-type {
   transform: translateZ(.4px) scale(.6) translateX(-104%) translateY(-40%) rotate(-5deg);
 }*/
 
@@ -114,7 +132,7 @@ p {
 .header {
   text-align: center;
   font-size: 175%;
-  color: #fff;
+  color: white;
   text-shadow: 0 2px 2px #000;
 }
 /*Star of About US*/
@@ -130,12 +148,12 @@ p {
 }
 
 #slide2 {
-  background-image: url("http://i.cbc.ca/1.3338163.1448664915!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_620/syrian-father-and-son-at-refugee-camp.jpg");
+  background-image: url("http://i.cbc.ca/1.3215851.1441381460!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_620/syrian-refugee-crisis.jpg");
   background-attachment: fixed;
 }
 
 #slide3:before {
-  background-image: url("http://i.cbc.ca/1.3215851.1441381460!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_620/syrian-refugee-crisis.jpg");
+  background-image: url("http://i.cbc.ca/1.3338163.1448664915!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_620/syrian-father-and-son-at-refugee-camp.jpg");
   transform: translateZ(-1px) scale(2);
   z-index:-1;
 }
@@ -143,6 +161,7 @@ p {
 #slide4 {
   background: #222;
 }
+<<<<<<< HEAD
 /*End of About Us*/
 /*Start of Resources*/
 #Resources {
@@ -171,6 +190,8 @@ p {
   background: #222;
 }
 /*End of Resources code*/
+=======
+>>>>>>> a5bd70125c9372c1b99177aa5ba88819834379a9
 
 .logo1 {
   display: inline;
@@ -319,7 +340,13 @@ a:visited {
     font-family: 'Hind', sans-serif;
     text-align: center;
 }
+
 .aboutUs {
+  font-family: 'Hind', sans-serif;
+  font-family: 'Hind', sans-serif;
   text-align: center;
+  color: white;
+}
+#interactive {
   color: white;
 }
