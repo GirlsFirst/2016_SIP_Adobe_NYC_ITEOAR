@@ -8,7 +8,7 @@ import constants
 # import levels
 # from platform_scroller import levelNow
 
-from platforms import MovingPlatform
+# from platforms import MovingPlatform
 from spritesheet_functions import SpriteSheet
 
 class Player(pygame.sprite.Sprite):
@@ -34,63 +34,63 @@ class Player(pygame.sprite.Sprite):
     # -- Methods
     def __init__(self):
         """ Constructor function """
+        # def player1 (self):
+        #     sprite_sheet1 = SpriteSheet("boat0.png")
+        #     image = sprite_sheet1.get_image(29,165,230,49)
+        #     self.walking_frames_r.append(image)
+        #     self.walking_frames_l.append(image)
+        #     sprite_sheet2 = SpriteSheet("boat1.png")
+        #     image = sprite_sheet2.get_image(30,168,228,42)
+        #     self.walking_frames_r.append(image)
+        #     self.walking_frames_l.append(image)
+        #     sprite_sheet3 = SpriteSheet("boat2.png")
+        #     image = sprite_sheet3.get_image(29,165,230,49)
+        #     self.walking_frames_r.append(image)
+        #     self.walking_frames_l.append(image)
+        #     sprite_sheet2 = SpriteSheet("boat1.png")
+        #     image = sprite_sheet2.get_image(30,168,228,42)
+        #     self.walking_frames_r.append(image)
+        #     self.walking_frames_l.append(image)
+
+        # def player2 (self):
+        sprite_sheet1 = SpriteSheet("spriteStand.png")
+        image = sprite_sheet1.get_image(34, 19, 32, 73)
+        self.walking_frames_r.append(image)
+        sprite_sheet2 = SpriteSheet("spriteWalkL2.png")
+        image = sprite_sheet2.get_image(34, 19, 32, 73)
+        self.walking_frames_r.append(image)
+        sprite_sheet3 = SpriteSheet("spriteWalkL1.png")
+        image = sprite_sheet3.get_image(34, 19, 32, 73)
+        self.walking_frames_r.append(image)
+        sprite_sheet4 = SpriteSheet("spriteWalkR2.png")
+        image = sprite_sheet4.get_image(34, 19, 32, 73)
+        self.walking_frames_r.append(image)
+        sprite_sheet5 = SpriteSheet("spriteWalkR1.png")
+        image = sprite_sheet5.get_image(34, 19, 32, 73)
+        self.walking_frames_r.append(image)
+
+        # Load all the right facing images, then flip them
+        # to face left.
+        image = sprite_sheet1.get_image(34, 19, 32, 73)
+        image = pygame.transform.flip(image, True, False)
+        self.walking_frames_l.append(image)
+        image = sprite_sheet2.get_image(34, 19, 32, 73)
+        image = pygame.transform.flip(image, True, False)
+        self.walking_frames_l.append(image)
+        image = sprite_sheet3.get_image(34, 19, 32, 73)
+        image = pygame.transform.flip(image, True, False)
+        self.walking_frames_l.append(image)
+        image = sprite_sheet4.get_image(34, 19, 32, 73)
+        image = pygame.transform.flip(image, True, False)
+        self.walking_frames_l.append(image)
+        image = sprite_sheet5.get_image(34, 19, 32, 73)
+        image = pygame.transform.flip(image, True, False)
+        self.walking_frames_l.append(image)
 
         # Call the parent's constructor
         pygame.sprite.Sprite.__init__(self)
+        # Load all the right facing images into a list
 
-        # if levelNow == 2:
-        sprite_sheet1 = SpriteSheet("boat0.png")
-        image = sprite_sheet1.get_image(29,165,230,49)
-        self.walking_frames_r.append(image)
-        self.walking_frames_l.append(image)
-        sprite_sheet2 = SpriteSheet("boat1.png")
-        image = sprite_sheet2.get_image(30,168,228,42)
-        self.walking_frames_r.append(image)
-        self.walking_frames_l.append(image)
-        sprite_sheet3 = SpriteSheet("boat2.png")
-        image = sprite_sheet3.get_image(29,165,230,49)
-        self.walking_frames_r.append(image)
-        self.walking_frames_l.append(image)
-        sprite_sheet2 = SpriteSheet("boat1.png")
-        image = sprite_sheet2.get_image(30,168,228,42)
-        self.walking_frames_r.append(image)
-        self.walking_frames_l.append(image)
-         
-        # else:
-        #     # Load all the right facing images into a list
-        #     sprite_sheet1 = SpriteSheet("spriteStand.png")
-        #     image = sprite_sheet1.get_image(34, 19, 32, 73)
-        #     self.walking_frames_r.append(image)
-        #     sprite_sheet2 = SpriteSheet("spriteWalkL2.png")
-        #     image = sprite_sheet2.get_image(34, 19, 32, 73)
-        #     self.walking_frames_r.append(image)
-        #     sprite_sheet3 = SpriteSheet("spriteWalkL1.png")
-        #     image = sprite_sheet3.get_image(34, 19, 32, 73)
-        #     self.walking_frames_r.append(image)
-        #     sprite_sheet4 = SpriteSheet("spriteWalkR2.png")
-        #     image = sprite_sheet4.get_image(34, 19, 32, 73)
-        #     self.walking_frames_r.append(image)
-        #     sprite_sheet5 = SpriteSheet("spriteWalkR1.png")
-        #     image = sprite_sheet5.get_image(34, 19, 32, 73)
-        #     self.walking_frames_r.append(image)
-            
-        #     # Load all the right facing images, then flip them
-        #     # to face left.
-        #     image = sprite_sheet1.get_image(34, 19, 32, 73)
-        #     image = pygame.transform.flip(image, True, False)
-        #     self.walking_frames_l.append(image)
-        #     image = sprite_sheet2.get_image(34, 19, 32, 73)
-        #     image = pygame.transform.flip(image, True, False)
-        #     self.walking_frames_l.append(image)
-        #     image = sprite_sheet3.get_image(34, 19, 32, 73)
-        #     image = pygame.transform.flip(image, True, False)
-        #     self.walking_frames_l.append(image)
-        #     image = sprite_sheet4.get_image(34, 19, 32, 73)
-        #     image = pygame.transform.flip(image, True, False)
-        #     self.walking_frames_l.append(image)
-        #     image = sprite_sheet5.get_image(34, 19, 32, 73)
-        #     image = pygame.transform.flip(image, True, False)
-        #     self.walking_frames_l.append(image)
 
 
         # Set the image the player starts with
@@ -102,7 +102,7 @@ class Player(pygame.sprite.Sprite):
     def update(self):
         """ Move the player. """
         # Gravity
-        # self.calc_grav()
+        self.calc_grav()
 
         # Move left/right
         self.rect.x += self.change_x
@@ -114,61 +114,61 @@ class Player(pygame.sprite.Sprite):
             frame = (pos // 30) % len(self.walking_frames_l)
             self.image = self.walking_frames_l[frame]
 
-    #     # See if we hit anything
-    #     block_hit_list = pygame.sprite.spritecollide(self, self.level.platform_list, False)
-    #     for block in block_hit_list:
-    #         # If we are moving right,
-    #         # set our right side to the left side of the item we hit
-    #         if self.change_x > 0:
-    #             self.rect.right = block.rect.left
-    #         elif self.change_x < 0:
-    #             # Otherwise if we are moving left, do the opposite.
-    #             self.rect.left = block.rect.right
+        # See if we hit anything
+        block_hit_list = pygame.sprite.spritecollide(self, self.level.platform_list, False)
+        for block in block_hit_list:
+            # If we are moving right,
+            # set our right side to the left side of the item we hit
+            if self.change_x > 0:
+                self.rect.right = block.rect.left
+            elif self.change_x < 0:
+                # Otherwise if we are moving left, do the opposite.
+                self.rect.left = block.rect.right
 
-    #     # Move up/down
-    #     self.rect.y += self.change_y
+        # Move up/down
+        self.rect.y += self.change_y
 
-    #     # Check and see if we hit anything
-    #     block_hit_list = pygame.sprite.spritecollide(self, self.level.platform_list, False)
-    #     for block in block_hit_list:
+        # Check and see if we hit anything
+        block_hit_list = pygame.sprite.spritecollide(self, self.level.platform_list, False)
+        for block in block_hit_list:
 
-    #         # Reset our position based on the top/bottom of the object.
-    #         if self.change_y > 0:
-    #             self.rect.bottom = block.rect.top
-    #         elif self.change_y < 0:
-    #             self.rect.top = block.rect.bottom
+            # Reset our position based on the top/bottom of the object.
+            if self.change_y > 0:
+                self.rect.bottom = block.rect.top
+            elif self.change_y < 0:
+                self.rect.top = block.rect.bottom
 
-    #         # Stop our vertical movement
-    #         self.change_y = 0
+            # Stop our vertical movement
+            self.change_y = 0
 
-    #         if isinstance(block, MovingPlatform):
-    #             self.rect.x += block.change_x
+            # if isinstance(block, MovingPlatform):
+            #     self.rect.x += block.change_x
 
-    # def calc_grav(self):
-    #     """ Calculate effect of gravity. """
-    #     if self.change_y == 0:
-    #         self.change_y = 1
-    #     else:
-    #         self.change_y += .35
+    def calc_grav(self):
+        """ Calculate effect of gravity. """
+        if self.change_y == 0:
+            self.change_y = 1
+        else:
+            self.change_y += .35
 
-    #     # See if we are on the ground.
-    #     if self.rect.y >= constants.SCREEN_HEIGHT - self.rect.height and self.change_y >= 0:
-    #         self.change_y = 0
-    #         self.rect.y = constants.SCREEN_HEIGHT - self.rect.height
+        # See if we are on the ground.
+        if self.rect.y >= constants.SCREEN_HEIGHT - self.rect.height and self.change_y >= 0:
+            self.change_y = 0
+            self.rect.y = constants.SCREEN_HEIGHT - self.rect.height
 
-    # def jump(self):
-    #     """ Called when user hits 'jump' button. """
+    def jump(self):
+        """ Called when user hits 'jump' button. """
 
-    #     # move down a bit and see if there is a platform below us.
-    #     # Move down 2 pixels because it doesn't work well if we only move down 1
-    #     # when working with a platform moving down.
-    #     self.rect.y += 2
-    #     platform_hit_list = pygame.sprite.spritecollide(self, self.level.platform_list, False)
-    #     self.rect.y -= 2
+        # move down a bit and see if there is a platform below us.
+        # Move down 2 pixels because it doesn't work well if we only move down 1
+        # when working with a platform moving down.
+        self.rect.y += 2
+        platform_hit_list = pygame.sprite.spritecollide(self, self.level.platform_list, False)
+        self.rect.y -= 2
 
-    #     # If it is ok to jump, set our speed upwards
-    #     if len(platform_hit_list) > 0 or self.rect.bottom >= constants.SCREEN_HEIGHT:
-    #         self.change_y = -10
+        # If it is ok to jump, set our speed upwards
+        if len(platform_hit_list) > 0 or self.rect.bottom >= constants.SCREEN_HEIGHT:
+            self.change_y = -10
 
     # Player-controlled movement:
     def go_left(self):
