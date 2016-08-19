@@ -27,13 +27,13 @@ import pygame
 
 import constants
 import levels
-
+pygame.init()
 from player import Player
 # from player import Boat
 
 def main():
     """ Main Program """
-    pygame.init()
+    
 
     # Set the height and width of the screen
     size = [constants.SCREEN_WIDTH, constants.SCREEN_HEIGHT]
