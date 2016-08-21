@@ -85,7 +85,11 @@ class Level_01(Level):
         level = [[platforms.SHELF_PLATFORM, 700, 150],
                  [platforms.SHELF_PLATFORM, 700, 410],
                  [platforms.HOME_PLATFORM, 400, 500],
-                 [platforms.HOME_PLATFORM, 360, 270]
+                 [platforms.HOME_PLATFORM, 400, 270],
+                 [platforms.SHELF_PLATFORM, 1950, 150],
+                 [platforms.SHELF_PLATFORM, 1950, 410],
+                 [platforms.HOME_PLATFORM, 1650, 280],
+                 [platforms.HOME_PLATFORM, 2900, 500]
                   ]
 
 
