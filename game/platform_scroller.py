@@ -24,28 +24,45 @@ http://opengameart.org/content/platformer-art-deluxe
 """
 
 import pygame
-
 import constants
 import levels
 
 from player import Player
 # from player import Boat
 pygame.init()
+
 size = [constants.SCREEN_WIDTH, constants.SCREEN_HEIGHT]
 screen = pygame.display.set_mode(size)
 pygame.display.set_caption("Platformer with sprite sheets")
+
 player = Player()
 
+# Screen Menu stuff not working 
+# ignore for now
 def text_objects(text, font):
     textSurface = font.render(text, True, white)
     return textSurface, textSurface.get_rect()
+ 
+def message_display(text):
+    largeText = pygame.font.Font('freesansbold.ttf', 25)
+    TextSurf, TextRect = text_objects(text, largeText)
+    TextRect.center = ((constants.SCREEN_WIDTH/2),(constants.SCREEN_HEIGHT/2))
+    gameDisplay.blit(TextSurf, TextRect)
+ 
+    pygame.display.update()
+ 
+    time.sleep(2)
+ 
+    main()
+    
+    
 
 def button(msg,x,y,w,h,color,action=None):
     mouse = pygame.mouse.get_pos()
     click = pygame.mouse.get_pressed()
     print(click)
     if x+w > mouse[0] > x and y+h > mouse[1] > y:
-        pygame.draw.rect(gameDisplay, color,(x,y,w,h))
+        pygame.draw.rect(screen, color,(x,y,w,h))
         if click[0] == 1 and action != None:
             if action == "play":
                 main()
@@ -53,7 +70,7 @@ def button(msg,x,y,w,h,color,action=None):
                 pygame.quit()
                 quit()
     else:
-        pygame.draw.rect(gameDisplay, color,(x,y,w,h))
+        pygame.draw.rect(screen, color,(x,y,w,h))
 
     smallText = pygame.font.Font("freesansbold.ttf",20)
     textSurf, textRect = text_objects(msg, smallText)
@@ -71,10 +88,10 @@ def game_intro():
                 pygame.quit()
                 quit()
                 
-        gameDisplay.fill(white)
-        largeText = pygame.font.Font('freesansbold.ttf',50)
-        TextSurf, TextRect = text_objects("A bit Racey", largeText)
-        TextRect.center = ((display_width/2),(display_height/2))
+        screen.fill(white)
+        largeText = pygame.font.Font('freesansbold.ttf', 50)
+        TextSurf, TextRect = text_objects("In the Eyes of a Refugee", largeText)
+        TextRect.center = ((constants.SCREEN_WIDTH/2),(constants.SCREEN_HEIGHT/2))
         screen.blit(TextSurf, TextRect)
 
 
@@ -82,10 +99,10 @@ def game_intro():
 
         # print(mouse)
                 
-        gameDisplay.fill(black)
+        screen.fill(black)
         largeText = pygame.font.Font('freesansbold.ttf',50)
         TextSurf, TextRect = text_objects("In the Eyes of a Refugee", largeText)
-        TextRect.center = ((display_width/2),(display_height/2))
+        TextRect.center = ((constants.SCREEN_WIDTH/2),(constants.SCREEN_HEIGHT/2))
         screen.blit(TextSurf, TextRect)
 
         button("PLAY", 150,450,100,50,red,"play")
@@ -192,3 +209,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+game_intro()
