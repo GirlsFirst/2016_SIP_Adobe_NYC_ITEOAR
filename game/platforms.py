@@ -19,7 +19,8 @@ from spritesheet_functions import SpriteSheet
 # STONE_PLATFORM_MIDDLE = (648, 648, 70, 40)
 # STONE_PLATFORM_RIGHT  = (792, 648, 70, 40)
 
-HOME_PLATFORM = (0,18,80,18)
+HOME_PLATFORM = (97,147,77,18)
+SHELF_PLATFORM = (0,36,400,20)
 
 class Platform(pygame.sprite.Sprite):
     """ Platform the user can jump on """
@@ -30,7 +31,7 @@ class Platform(pygame.sprite.Sprite):
             code. """
         pygame.sprite.Sprite.__init__(self)
 
-        sprite_sheet = SpriteSheet("platform.png")
+        sprite_sheet = SpriteSheet("platforms.png")
         # Grab the image for this platform
         self.image = sprite_sheet.get_image(sprite_sheet_data[0],
                                             sprite_sheet_data[1],
