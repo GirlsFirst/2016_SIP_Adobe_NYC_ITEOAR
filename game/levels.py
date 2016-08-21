@@ -81,9 +81,11 @@ class Level_01(Level):
 
 
         # Array with type of platform, and x, y location of the platform.
-        level = [
-                  [platforms.HOME_PLATFORM, 800,100],
-                  [platforms.SHELF_PLATFORM, 500,500]
+        #(0,0) is on upperleft
+        level = [[platforms.SHELF_PLATFORM, 700, 150],
+                 [platforms.SHELF_PLATFORM, 700, 410],
+                 [platforms.HOME_PLATFORM, 380, 500],
+                 [platforms.HOME_PLATFORM, 360, 260]
                   ]
 
 
