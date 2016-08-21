@@ -162,7 +162,7 @@ class Player(pygame.sprite.Sprite):
         if self.change_y == 0:
             self.change_y = 1
         else:
-            self.change_y += .35
+            self.change_y += .5
 
         # If on ground
         if self.rect.y >= constants.SCREEN_HEIGHT - self.rect.height and self.change_y >= 0:
@@ -180,7 +180,7 @@ class Player(pygame.sprite.Sprite):
 
         # If it is ok to jump, set speed upwards
         if len(platform_hit_list) > 0 or self.rect.bottom >= constants.SCREEN_HEIGHT:
-            self.change_y = -10
+            self.change_y = -13
 
     # Player-controlled movements
     def go_left(self):
