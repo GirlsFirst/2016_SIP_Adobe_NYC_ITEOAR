@@ -73,7 +73,6 @@ def game_intro():
         clock.tick(15) 
 
 def main():
-<<<<<<< HEAD
     
     pygame.init()
 
@@ -87,12 +86,12 @@ def main():
     player = Player()
 
     # Create all levels
-=======
+
     """ Main Program """
     # Set the height and width of the screen
     # Create the player
     # Create all the levels
->>>>>>> 5668344183ecd90a5540da47bed95f6b7a637767
+
     level_list = []
     # levelNow = 1
     level_list.append(levels.Level_01(player))
