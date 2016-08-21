@@ -8,12 +8,12 @@ pygame.init()
 
 size = [constants.SCREEN_WIDTH, constants.SCREEN_HEIGHT]
 screen = pygame.display.set_mode(size)
-<<<<<<< HEAD
+
 pygame.display.set_caption("Platformer with sprite sheets")
 
-=======
+
 pygame.display.set_caption("In the Eyes of a Refugee")
->>>>>>> 6cb438fb1e1682f72e2c381dbbca97c3890f02db
+
 player = Player()
 
 # Screen Menu stuff not working 
