@@ -84,8 +84,8 @@ class Level_01(Level):
         #(0,0) is on upperleft
         level = [[platforms.SHELF_PLATFORM, 700, 150],
                  [platforms.SHELF_PLATFORM, 700, 410],
-                 [platforms.HOME_PLATFORM, 380, 500],
-                 [platforms.HOME_PLATFORM, 360, 260]
+                 [platforms.HOME_PLATFORM, 400, 500],
+                 [platforms.HOME_PLATFORM, 360, 270]
                   ]
 
 
