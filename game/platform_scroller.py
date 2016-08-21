@@ -8,7 +8,7 @@ from player import Player
 pygame.init()
 size = [constants.SCREEN_WIDTH, constants.SCREEN_HEIGHT]
 screen = pygame.display.set_mode(size)
-pygame.display.set_caption("Platformer with sprite sheets")
+pygame.display.set_caption("In the Eyes of a Refugee")
 player = Player()
 
 def text_objects(text, font):
@@ -107,7 +107,7 @@ def main():
     active_sprite_list = pygame.sprite.Group()
     player.level = current_level
 
-    player.rect.x = 340
+    player.rect.x = 320
     player.rect.y = constants.SCREEN_HEIGHT - player.rect.height
     active_sprite_list.add(player)
 
