@@ -1,6 +1,6 @@
-"""
+'''
 Global constants
-"""
+'''
 
 # Colors
 # BLACK    = (   0,   0,   0) 
