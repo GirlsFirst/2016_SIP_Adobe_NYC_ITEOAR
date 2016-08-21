@@ -19,7 +19,7 @@ from spritesheet_functions import SpriteSheet
 # STONE_PLATFORM_MIDDLE = (648, 648, 70, 40)
 # STONE_PLATFORM_RIGHT  = (792, 648, 70, 40)
 
-HOME_PLATFORM = (97,147,77,18)
+HOME_PLATFORM = (49,166,81,20)
 SHELF_PLATFORM = (0,36,400,20)
 
 class Platform(pygame.sprite.Sprite):
