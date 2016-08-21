@@ -30,20 +30,77 @@ import levels
 
 from player import Player
 # from player import Boat
+pygame.init()
+size = [constants.SCREEN_WIDTH, constants.SCREEN_HEIGHT]
+screen = pygame.display.set_mode(size)
+pygame.display.set_caption("Platformer with sprite sheets")
+player = Player()
+
+def text_objects(text, font):
+    textSurface = font.render(text, True, white)
+    return textSurface, textSurface.get_rect()
+
+def button(msg,x,y,w,h,color,action=None):
+    mouse = pygame.mouse.get_pos()
+    click = pygame.mouse.get_pressed()
+    print(click)
+    if x+w > mouse[0] > x and y+h > mouse[1] > y:
+        pygame.draw.rect(gameDisplay, color,(x,y,w,h))
+        if click[0] == 1 and action != None:
+            if action == "play":
+                main()
+            elif action == "quit":
+                pygame.quit()
+                quit()
+    else:
+        pygame.draw.rect(gameDisplay, color,(x,y,w,h))
+
+    smallText = pygame.font.Font("freesansbold.ttf",20)
+    textSurf, textRect = text_objects(msg, smallText)
+    textRect.center = ( (x+(w/2)), (y+(h/2)) )
+    screen.blit(textSurf, textRect)
+
+def game_intro():
+
+    intro = True
+
+    while intro:
+        for event in pygame.event.get():
+            #print(event)
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
+                
+        gameDisplay.fill(white)
+        largeText = pygame.font.Font('freesansbold.ttf',50)
+        TextSurf, TextRect = text_objects("A bit Racey", largeText)
+        TextRect.center = ((display_width/2),(display_height/2))
+        screen.blit(TextSurf, TextRect)
+
+
+        mouse = pygame.mouse.get_pos()
+
+        # print(mouse)
+                
+        gameDisplay.fill(black)
+        largeText = pygame.font.Font('freesansbold.ttf',50)
+        TextSurf, TextRect = text_objects("In the Eyes of a Refugee", largeText)
+        TextRect.center = ((display_width/2),(display_height/2))
+        screen.blit(TextSurf, TextRect)
+
+        button("PLAY", 150,450,100,50,red,"play")
+        button("QUIT", 550,450,100,50,red,"quit")
+        mouse = pygame.mouse.get_pos()
+
+        # print(mouse)
+
+        pygame.display.update()
+        clock.tick(15) 
 
 def main():
     """ Main Program """
-    pygame.init()
-
     # Set the height and width of the screen
-    size = [constants.SCREEN_WIDTH, constants.SCREEN_HEIGHT]
-    screen = pygame.display.set_mode(size)
-
-    pygame.display.set_caption("Platformer with sprite sheets")
-
     # Create the player
-    player = Player()
-
     # Create all the levels
     level_list = []
     # levelNow = 1
