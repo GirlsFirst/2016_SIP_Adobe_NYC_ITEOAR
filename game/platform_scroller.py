@@ -9,8 +9,6 @@ pygame.init()
 size = [constants.SCREEN_WIDTH, constants.SCREEN_HEIGHT]
 screen = pygame.display.set_mode(size)
 
-pygame.display.set_caption("Platformer with sprite sheets")
-
 
 pygame.display.set_caption("In the Eyes of a Refugee")
 
@@ -19,7 +17,7 @@ player = Player()
 # Screen Menu stuff not working 
 # ignore for now
 def text_objects(text, font):
-    textSurface = font.render(text, True, white)
+    textSurface = font.render(text, True, constants.WHITE)
     return textSurface, textSurface.get_rect()
  
 def message_display(text):
@@ -67,7 +65,7 @@ def game_intro():
                 pygame.quit()
                 quit()
                 
-        screen.fill(white)
+        screen.fill(constants.WHITE)
         largeText = pygame.font.Font('freesansbold.ttf', 50)
         TextSurf, TextRect = text_objects("In the Eyes of a Refugee", largeText)
         TextRect.center = ((constants.SCREEN_WIDTH/2),(constants.SCREEN_HEIGHT/2))
@@ -78,17 +76,19 @@ def game_intro():
 
         # print(mouse)
                 
-        screen.fill(black)
+        screen.fill((0,0,0))
         largeText = pygame.font.Font('freesansbold.ttf',50)
         TextSurf, TextRect = text_objects("In the Eyes of a Refugee", largeText)
         TextRect.center = ((constants.SCREEN_WIDTH/2),(constants.SCREEN_HEIGHT/2))
         screen.blit(TextSurf, TextRect)
 
-        button("PLAY", 150,450,100,50,red,"play")
-        button("QUIT", 550,450,100,50,red,"quit")
+        button("PLAY", 150,450,100,50,constants.RED,"play")
+        button("QUIT", 550,450,100,50,constants.RED,"quit")
         mouse = pygame.mouse.get_pos()
 
         # print(mouse)
+
+        clock = pygame.time.Clock()
 
         pygame.display.update()
         clock.tick(15) 
@@ -202,5 +202,5 @@ def main():
     pygame.quit()
 
 if __name__ == "__main__":
+    game_intro()
     main()
-game_intro()
