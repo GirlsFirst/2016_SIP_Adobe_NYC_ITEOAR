@@ -8,4 +8,5 @@ In here is a website and a complimentary interactive component, with the goal to
 ## Usage
 
 index.html opens landing page for website
+
 platform_scroller.py launches the interactive component
