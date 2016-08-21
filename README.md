@@ -10,3 +10,7 @@ In here is a website and a complimentary interactive component, with the goal to
 index.html opens landing page for website
 
 platform_scroller.py launches the interactive component
+
+## Where Credit is Due
+
+Modeled after code from http://programarcadegames.com/
