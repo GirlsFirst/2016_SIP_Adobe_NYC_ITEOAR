@@ -19,20 +19,6 @@ player = Player()
 def text_objects(text, font):
     textSurface = font.render(text, True, constants.WHITE)
     return textSurface, textSurface.get_rect()
- 
-def message_display(text):
-    largeText = pygame.font.Font('freesansbold.ttf', 25)
-    TextSurf, TextRect = text_objects(text, largeText)
-    TextRect.center = ((constants.SCREEN_WIDTH/2),(constants.SCREEN_HEIGHT/2))
-    gameDisplay.blit(TextSurf, TextRect)
- 
-    pygame.display.update()
- 
-    time.sleep(2)
- 
-    main()
-    
-    
 
 def button(msg,x,y,w,h,color,action=None):
     mouse = pygame.mouse.get_pos()
@@ -46,6 +32,8 @@ def button(msg,x,y,w,h,color,action=None):
             elif action == "quit":
                 pygame.quit()
                 quit()
+            elif action == "instructions":
+                game_instructions()
     else:
         pygame.draw.rect(screen, color,(x,y,w,h), 3)
 
@@ -86,6 +74,7 @@ def game_intro():
         screen.blit(TextSurf, TextRect)
 
         button("START", 150,450,100,50,constants.WHITE,"play")
+        button("INSTRUCTIONS", 300, 450, 200, 50, constants.WHITE, "instructions")
         button("QUIT", 550,450,100,50,constants.WHITE,"quit")
         mouse = pygame.mouse.get_pos()
 
@@ -93,6 +82,32 @@ def game_intro():
 
         clock = pygame.time.Clock()
 
+        pygame.display.update()
+        clock.tick(15) 
+
+def game_instructions():
+    instructions = True
+    bg = pygame.image.load("waves.jpg")
+    while instructions:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
+            
+        screen.fill(constants.WHITE)
+        screen.blit(bg, (0,0))
+
+        largeText = pygame.font.Font('freesansbold.ttf',50)
+        TextSurf, TextRect = text_objects("Instructions", largeText)
+        # Text is centered at the top middle
+        TextRect.center = ((constants.SCREEN_WIDTH/2),(constants.SCREEN_HEIGHT/5))
+        screen.blit(TextSurf, TextRect)
+
+        button("START", 150,450,100,50,constants.WHITE,"play")
+        button("QUIT", 550,450,100,50,constants.WHITE,"quit")
+        mouse = pygame.mouse.get_pos()
+
+        clock = pygame.time.Clock()
         pygame.display.update()
         clock.tick(15) 
 
@@ -207,4 +222,5 @@ def main():
 if __name__ == "__main__":
 
     game_intro()
+    game_instructions()
     main()
