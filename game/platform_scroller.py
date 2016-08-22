@@ -1,35 +1,115 @@
-"""
-Sample Python/Pygame Programs
-Simpson College Computer Science
-http://programarcadegames.com/
-http://simpson.edu/computer-science/
-
-Main module for platform scroller exampl
-From:
-http://programarcadegames.com/python_examples/sprite_sheets/
-
-Explanation video: http://youtu.be/czBDKWJqOao
-
-Part of a series:
-http://programarcadegames.com/python_examples/f.php?file=move_with_walls_example.py
-http://programarcadegames.com/python_examples/f.php?file=maze_runner.py
-http://programarcadegames.com/python_examples/f.php?file=platform_jumper.py
-http://programarcadegames.com/python_examples/f.php?file=platform_scroller.py
-http://programarcadegames.com/python_examples/f.php?file=platform_moving.py
-http://programarcadegames.com/python_examples/sprite_sheets/
-
-Game art from Kenney.nl:
-http://opengameart.org/content/platformer-art-deluxe
-
-"""
-
 import pygame
-
 import constants
 import levels
 pygame.init()
 from player import Player
 # from player import Boat
+pygame.init()
+
+size = [constants.SCREEN_WIDTH, constants.SCREEN_HEIGHT]
+screen = pygame.display.set_mode(size)
+
+
+pygame.display.set_caption("In the Eyes of a Refugee")
+
+player = Player()
+
+# Screen Menu stuff not working 
+# ignore for now
+def text_objects(text, font):
+    textSurface = font.render(text, True, constants.WHITE)
+    return textSurface, textSurface.get_rect()
+
+def button(msg,x,y,w,h,color,action=None):
+    mouse = pygame.mouse.get_pos()
+    click = pygame.mouse.get_pressed()
+    # print(click)
+    if x+w > mouse[0] > x and y+h > mouse[1] > y:
+        pygame.draw.rect(screen, color,(x,y,w,h), 5)
+        if click[0] == 1 and action != None:
+            if action == "play":
+                main()
+            elif action == "quit":
+                pygame.quit()
+                quit()
+            elif action == "instructions":
+                game_instructions()
+    else:
+        pygame.draw.rect(screen, color,(x,y,w,h), 3)
+
+    smallText = pygame.font.Font("freesansbold.ttf",20)
+    textSurf, textRect = text_objects(msg, smallText)
+    textRect.center = ( (x+(w/2)), (y+(h/2)) )
+    screen.blit(textSurf, textRect)
+
+def game_intro():
+
+
+    intro = True
+    bg = pygame.image.load("start.gif")
+
+    while intro:
+        for event in pygame.event.get():
+            #print(event)
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
+                
+        screen.fill(constants.WHITE)
+        largeText = pygame.font.Font('freesansbold.ttf', 50)
+        TextSurf, TextRect = text_objects("In the Eyes of a Refugee", largeText)
+        TextRect.center = ((constants.SCREEN_WIDTH/2),(constants.SCREEN_HEIGHT/2))
+        screen.blit(TextSurf, TextRect)
+
+
+        mouse = pygame.mouse.get_pos()
+
+        # print(mouse)
+                
+        # screen.fill((0,0,0))
+        screen.blit(bg, (0,0))
+        largeText = pygame.font.Font('freesansbold.ttf',50)
+        TextSurf, TextRect = text_objects("In the Eyes of a Refugee", largeText)
+        TextRect.center = ((constants.SCREEN_WIDTH/2),(constants.SCREEN_HEIGHT/2))
+        screen.blit(TextSurf, TextRect)
+
+        button("START", 150,450,100,50,constants.WHITE,"play")
+        button("INSTRUCTIONS", 300, 450, 200, 50, constants.WHITE, "instructions")
+        button("QUIT", 550,450,100,50,constants.WHITE,"quit")
+        mouse = pygame.mouse.get_pos()
+
+        # print(mouse)
+
+        clock = pygame.time.Clock()
+
+        pygame.display.update()
+        clock.tick(15) 
+
+def game_instructions():
+    instructions = True
+    bg = pygame.image.load("waves.jpg")
+    while instructions:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
+            
+        screen.fill(constants.WHITE)
+        screen.blit(bg, (0,0))
+
+        largeText = pygame.font.Font('freesansbold.ttf',50)
+        TextSurf, TextRect = text_objects("Instructions", largeText)
+        # Text is centered at the top middle
+        TextRect.center = ((constants.SCREEN_WIDTH/2),(constants.SCREEN_HEIGHT/5))
+        screen.blit(TextSurf, TextRect)
+
+        button("START", 150,450,100,50,constants.WHITE,"play")
+        button("QUIT", 550,450,100,50,constants.WHITE,"quit")
+        mouse = pygame.mouse.get_pos()
+
+        clock = pygame.time.Clock()
+        pygame.display.update()
+        clock.tick(15) 
 
 def game_intro():
     intro = True 
@@ -47,19 +127,30 @@ def game_intro():
             pygame.display.update()
             clock.tick(15)
 def main():
+<<<<<<< HEAD
     """ Main Program """
     
+=======
+    
+    pygame.init()
+>>>>>>> 43ed7d09558bd1f0fb3853a67b130605b33823b8
 
-    # Set the height and width of the screen
+    # Set the height and width of screen
     size = [constants.SCREEN_WIDTH, constants.SCREEN_HEIGHT]
     screen = pygame.display.set_mode(size)
 
     pygame.display.set_caption("Platformer with sprite sheets")
 
-    # Create the player
+    # Create player
     player = Player()
 
+    # Create all levels
+
+    """ Main Program """
+    # Set the height and width of the screen
+    # Create the player
     # Create all the levels
+
     level_list = []
     # levelNow = 1
     level_list.append(levels.Level_01(player))
@@ -75,21 +166,21 @@ def main():
     active_sprite_list = pygame.sprite.Group()
     player.level = current_level
 
-    player.rect.x = 340
+    player.rect.x = 320
     player.rect.y = constants.SCREEN_HEIGHT - player.rect.height
     active_sprite_list.add(player)
 
-    #Loop until the user clicks the close button.
+    #Loop until the user clicks the close button
     done = False
 
-    # Used to manage how fast the screen updates
+    # Used for FPS
     clock = pygame.time.Clock()
 
     # -------- Main Program Loop -----------
     while not done:
-        for event in pygame.event.get(): # User did something
-            if event.type == pygame.QUIT: # If user clicked close
-                done = True # Flag that we are done so we exit this loop
+        for event in pygame.event.get(): 
+            if event.type == pygame.QUIT: 
+                done = True 
 
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_LEFT:
@@ -105,25 +196,25 @@ def main():
                 if event.key == pygame.K_RIGHT and player.change_x > 0:
                     player.stop()
 
-        # Update the player.
+        # Update player
         active_sprite_list.update()
 
-        # Update items in the level
+        # Update current level
         current_level.update()
 
-        # If the player gets near the right side, shift the world left (-x)
+        # If the player nears right side, shift world left
         if player.rect.x >= 500:
             diff = player.rect.x - 500
             player.rect.x = 500
             current_level.shift_world(-diff)
 
-        # If the player gets near the left side, shift the world right (+x)
+        # If the player gets nears left side, shift world right
         if player.rect.x <= 120:
             diff = 120 - player.rect.x
             player.rect.x = 120
             current_level.shift_world(diff)
 
-        # If the player gets to the end of the level, go to the next level
+        # Update to next level when reach end of current level
         current_position = player.rect.x + current_level.world_shift
         if current_position < current_level.level_limit:
             player.rect.x = 120
@@ -138,7 +229,7 @@ def main():
 
         # ALL CODE TO DRAW SHOULD GO ABOVE THIS COMMENT
 
-        # Limit to 60 frames per second
+        # Limit to 60 FPS
         clock.tick(60)
 
         # Go ahead and update the screen with what we've drawn.
@@ -149,4 +240,7 @@ def main():
     pygame.quit()
 
 if __name__ == "__main__":
+
+    game_intro()
+    game_instructions()
     main()
