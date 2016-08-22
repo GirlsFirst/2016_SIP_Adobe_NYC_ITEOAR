@@ -85,7 +85,7 @@ def game_intro():
         TextRect.center = ((constants.SCREEN_WIDTH/2),(constants.SCREEN_HEIGHT/2))
         screen.blit(TextSurf, TextRect)
 
-        button("PLAY", 150,450,100,50,constants.WHITE,"play")
+        button("START", 150,450,100,50,constants.WHITE,"play")
         button("QUIT", 550,450,100,50,constants.WHITE,"quit")
         mouse = pygame.mouse.get_pos()
 
