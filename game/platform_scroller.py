@@ -1,7 +1,7 @@
 import pygame
 import constants
 import levels
-pygame.init()
+
 from player import Player
 # from player import Boat
 
