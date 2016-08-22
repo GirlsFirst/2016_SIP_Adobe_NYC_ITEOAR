@@ -76,7 +76,9 @@ class Level_01(Level):
         self.background.set_colorkey(constants.WHITE)
         self.level_limit = -4200
 
-        # levelNow = 1
+        # player.image = "girl"
+
+        # levelNow =
 
 
         # Type of platform, (x,y) location of specified platform
@@ -123,7 +125,7 @@ class Level_02(Level):
         # Call the parent constructor
         Level.__init__(self, player)
 
-        self.background = pygame.image.load("Boat Level.png")
+        self.background = pygame.image.load("Boat Level.png").convert()
         self.background.set_colorkey(constants.WHITE)
         self.level_limit = -4200
 
