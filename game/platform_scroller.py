@@ -111,29 +111,27 @@ def game_instructions():
         pygame.display.update()
         clock.tick(15) 
 
-def game_intro():
-    intro = True 
-    while intro: 
-            for event in pygame.event.get():
-                print(event)
-                if event.type == pygame.QUIT:
-                    pygame.quit()
-                    quit()
-            gameDisplay.fill(white)
-            largeText = pygame.font.Font('freesansbold.ttf', 115)      
-            TextSurf, TextRect = text_objects("In the Eyes of a Refugee", largeText)
-            TextRect.center = ((display_width/2),(display_height/2))
-            gameDisplay.blit(TextSurf, TextRect)
-            pygame.display.update()
-            clock.tick(15)
+# def game_intro():
+#     intro = True 
+#     while intro: 
+#             for event in pygame.event.get():
+#                 print(event)
+#                 if event.type == pygame.QUIT:
+#                     pygame.quit()
+#                     quit()
+#             screen.fill(constants.WHITE)
+#             largeText = pygame.font.Font('freesansbold.ttf', 115)      
+#             TextSurf, TextRect = text_objects("In the Eyes of a Refugee", largeText)
+#             TextRect.center = ((constants.SCREEN_WIDTH/2),(constants.SCREEN_HEIGHT/2))
+#             screen.blit(TextSurf, TextRect)
+#             pygame.display.update()
+#             clock.tick(15)
 def main():
-<<<<<<< HEAD
     """ Main Program """
     
-=======
+
     
     pygame.init()
->>>>>>> 43ed7d09558bd1f0fb3853a67b130605b33823b8
 
     # Set the height and width of screen
     size = [constants.SCREEN_WIDTH, constants.SCREEN_HEIGHT]
@@ -226,6 +224,7 @@ def main():
         # ALL CODE TO DRAW SHOULD GO BELOW THIS COMMENT
         current_level.draw(screen)
         active_sprite_list.draw(screen)
+        # collideSpriteList.draw(screen)
 
         # ALL CODE TO DRAW SHOULD GO ABOVE THIS COMMENT
 
