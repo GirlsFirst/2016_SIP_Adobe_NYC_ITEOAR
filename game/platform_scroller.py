@@ -1,7 +1,7 @@
 import pygame
 import constants
 import levels
-
+pygame.init()
 from player import Player
 # from player import Boat
 pygame.init()
@@ -111,9 +111,29 @@ def game_instructions():
         pygame.display.update()
         clock.tick(15) 
 
+def game_intro():
+    intro = True 
+    while intro: 
+            for event in pygame.event.get():
+                print(event)
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    quit()
+            gameDisplay.fill(white)
+            largeText = pygame.font.Font('freesansbold.ttf', 115)      
+            TextSurf, TextRect = text_objects("In the Eyes of a Refugee", largeText)
+            TextRect.center = ((display_width/2),(display_height/2))
+            gameDisplay.blit(TextSurf, TextRect)
+            pygame.display.update()
+            clock.tick(15)
 def main():
+<<<<<<< HEAD
+    """ Main Program """
+    
+=======
     
     pygame.init()
+>>>>>>> 43ed7d09558bd1f0fb3853a67b130605b33823b8
 
     # Set the height and width of screen
     size = [constants.SCREEN_WIDTH, constants.SCREEN_HEIGHT]
