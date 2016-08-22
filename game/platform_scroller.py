@@ -37,9 +37,9 @@ def message_display(text):
 def button(msg,x,y,w,h,color,action=None):
     mouse = pygame.mouse.get_pos()
     click = pygame.mouse.get_pressed()
-    print(click)
+    # print(click)
     if x+w > mouse[0] > x and y+h > mouse[1] > y:
-        pygame.draw.rect(screen, color,(x,y,w,h))
+        pygame.draw.rect(screen, color,(x,y,w,h), 5)
         if click[0] == 1 and action != None:
             if action == "play":
                 main()
@@ -47,7 +47,7 @@ def button(msg,x,y,w,h,color,action=None):
                 pygame.quit()
                 quit()
     else:
-        pygame.draw.rect(screen, color,(x,y,w,h))
+        pygame.draw.rect(screen, color,(x,y,w,h), 3)
 
     smallText = pygame.font.Font("freesansbold.ttf",20)
     textSurf, textRect = text_objects(msg, smallText)
@@ -56,7 +56,9 @@ def button(msg,x,y,w,h,color,action=None):
 
 def game_intro():
 
+
     intro = True
+    bg = pygame.image.load("start.gif")
 
     while intro:
         for event in pygame.event.get():
@@ -76,14 +78,15 @@ def game_intro():
 
         # print(mouse)
                 
-        screen.fill((0,0,0))
+        # screen.fill((0,0,0))
+        screen.blit(bg, (0,0))
         largeText = pygame.font.Font('freesansbold.ttf',50)
         TextSurf, TextRect = text_objects("In the Eyes of a Refugee", largeText)
         TextRect.center = ((constants.SCREEN_WIDTH/2),(constants.SCREEN_HEIGHT/2))
         screen.blit(TextSurf, TextRect)
 
-        button("PLAY", 150,450,100,50,constants.RED,"play")
-        button("QUIT", 550,450,100,50,constants.RED,"quit")
+        button("PLAY", 150,450,100,50,constants.WHITE,"play")
+        button("QUIT", 550,450,100,50,constants.WHITE,"quit")
         mouse = pygame.mouse.get_pos()
 
         # print(mouse)
@@ -202,5 +205,6 @@ def main():
     pygame.quit()
 
 if __name__ == "__main__":
+
     game_intro()
     main()
