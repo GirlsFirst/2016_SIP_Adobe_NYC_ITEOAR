@@ -87,7 +87,15 @@ def game_intro():
 
 def game_instructions():
     instructions = True
-    bg = pygame.image.load("waves.jpg")
+    bg = pygame.image.load("waves.png")
+    # rightArrow = pygame.image.load("rightArrow.png")
+    # leftArrow = pygame.image.load("rightArrow.png")
+    # leftArrow = pygame.transform.flip(leftArrow, True, False)
+    # upArrow = pygame.image.load("rightArrow.png")
+    # upArrow = pygame.transform.rotate(upArrow, 90)
+    # downArrow = pygame.image.load("rightArrow.png")
+    # downArrow = pygame.transform.rotate(upArrow, 90)
+    # downArrow = pygame.transform.flip(downArrow, False, True)
     while instructions:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
