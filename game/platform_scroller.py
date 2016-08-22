@@ -4,6 +4,7 @@ import levels
 pygame.init()
 from player import Player
 # from player import Boat
+
 pygame.init()
 
 size = [constants.SCREEN_WIDTH, constants.SCREEN_HEIGHT]
@@ -11,6 +12,8 @@ screen = pygame.display.set_mode(size)
 
 
 pygame.display.set_caption("In the Eyes of a Refugee")
+
+# pygame.font.init()
 
 player = Player()
 
