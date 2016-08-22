@@ -37,6 +37,8 @@ class Platform(pygame.sprite.Sprite):
                                             sprite_sheet_data[2],
                                             sprite_sheet_data[3])
 
+        self.image = pygame.transform.scale2x(self.image)
+
         self.rect = self.image.get_rect()
 
 #
