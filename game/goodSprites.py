@@ -8,7 +8,7 @@ from spritesheet_functions import SpriteSheet
 # Define platforms from spritesheet
 
 MONEY_SPRITE = (61,54,35,24)
-APPLE_SPRITE = (152,59,12,74)
+APPLE_SPRITE = (152,59,12,15)
 BANDAID_SPRITE = (19,90,14,51)
 MED_SPRITE = (73,94,30,42)
 BOTTLE_SPRITE = (133,83,32,76)
@@ -34,16 +34,19 @@ class Platform(pygame.sprite.Sprite):
 
 		# self.image = pygame.transform.scale2x(self.image)
 
+		if sprite_sheet_data == APPLE_SPRITE:
+			self.image = pygame.transform.scale2x(self.image)
+
 		if sprite_sheet_data == BANDAID_SPRITE:
 			self.image = pygame.transform.scale(self.image,(11,38))
 
 		if sprite_sheet_data == MED_SPRITE:
-			self.image = pygame.transform.scale(self.image,(15,21))
+			self.image = pygame.transform.scale(self.image,(23,32)) #75%
 
 		if sprite_sheet_data == BOTTLE_SPRITE:
-			self.image = pygame.transform.scale(self.image,(8,19))
+			self.image = pygame.transform.scale(self.image,(19,46)) #60%
 
 		if sprite_sheet_data == CAN_SPRITE:
-			self.image = pygame.transform.scale(self.image,(13,10))
+			self.image = pygame.transform.scale(self.image,(26,20)) #30%
 
 		self.rect = self.image.get_rect()
