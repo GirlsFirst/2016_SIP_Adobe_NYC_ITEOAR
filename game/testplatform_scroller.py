@@ -1,9 +1,9 @@
 import pygame
 import constants
 import levels
+pygame.init()
 from player import Player
 # from player import Boat
-
 pygame.init()
 
 size = [constants.SCREEN_WIDTH, constants.SCREEN_HEIGHT]
@@ -12,11 +12,10 @@ screen = pygame.display.set_mode(size)
 
 pygame.display.set_caption("In the Eyes of a Refugee")
 
-pygame.font.init()
-
 player = Player()
 
-# Screen Menu Stuff
+# Screen Menu stuff not working 
+# ignore for now
 def text_objects(text, font):
     textSurface = font.render(text, True, constants.WHITE)
     return textSurface, textSurface.get_rect()
@@ -28,22 +27,17 @@ def button(msg,x,y,w,h,color,action=None):
     if x+w > mouse[0] > x and y+h > mouse[1] > y:
         pygame.draw.rect(screen, color,(x,y,w,h), 5)
         if click[0] == 1 and action != None:
-            if action == "start":
-                backstory()
-            elif action == "quit":
+            if action == "quit":
                 pygame.quit()
                 quit()
+            elif action == "backgroundstory":
+                game_backstory()
             elif action == "instructions":
                 game_instructions()
             elif action == "play":
                 main()
-<<<<<<< HEAD
-=======
-            
->>>>>>> 06a2c081a119a1c3665bd0f7a7d7fb709e1b395c
     else:
         pygame.draw.rect(screen, color,(x,y,w,h), 3)
-    # pygame.font.init()
 
     smallText = pygame.font.Font("freesansbold.ttf",20)
     textSurf, textRect = text_objects(msg, smallText)
@@ -60,54 +54,58 @@ def game_intro():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
+                
         screen.fill(constants.WHITE)
         largeText = pygame.font.Font('freesansbold.ttf', 50)
         TextSurf, TextRect = text_objects("In the Eyes of a Refugee", largeText)
         TextRect.center = ((constants.SCREEN_WIDTH/2),(constants.SCREEN_HEIGHT/2))
         screen.blit(TextSurf, TextRect)
 
+
         mouse = pygame.mouse.get_pos()
+
         # print(mouse)
                 
         # screen.fill((0,0,0))
-
         screen.blit(bg, (0,0))
         largeText = pygame.font.Font('freesansbold.ttf',50)
         TextSurf, TextRect = text_objects("In the Eyes of a Refugee", largeText)
         TextRect.center = ((constants.SCREEN_WIDTH/2),(constants.SCREEN_HEIGHT/2))
         screen.blit(TextSurf, TextRect)
 
-        button("START", 150,450,100,50,constants.WHITE,"start")
+        button("START", 150,450,100,50,constants.WHITE,"backgroundstory")
         button("QUIT", 550,450,100,50,constants.WHITE,"quit")
+
+        # button("QUIT", 550,450,100,50,constants.WHITE,"quit")
         mouse = pygame.mouse.get_pos()
 
         # print(mouse)
-        pygame.display.update()
+
         clock = pygame.time.Clock()
+
+        pygame.display.update()
         clock.tick(15) 
 
-def backstory():
-    story = True 
-    bg = pygame.image.load("Background Story.jpg")
-    while story:
+def game_backstory():
+    backstory = True
+    bg = pygame.image.load("Background_Story.jpg")
+
+    while backstory:
         for event in pygame.event.get():
-            #print(event)
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
-   
-        # screen.fill(constants.WHITE)
+                
+        screen.fill(constants.WHITE)
         largeText = pygame.font.Font('freesansbold.ttf', 50)
-        TextSurf, TextRect = text_objects("In the Eyes of Amirah", largeText)
+        TextSurf, TextRect = text_objects("In the Eyes of a Refugee", largeText)
         TextRect.center = ((constants.SCREEN_WIDTH/2),(constants.SCREEN_HEIGHT/2))
         screen.blit(TextSurf, TextRect)
         mouse = pygame.mouse.get_pos()
 
-
-   
         screen.blit(bg, (0,0))
         largeText = pygame.font.Font('freesansbold.ttf',50)
-        TextSurf, TextRect = text_objects("In the Eyes of Amirah", largeText)
+        TextSurf, TextRect = text_objects("In the Eyes of a Refugee", largeText)
         TextRect.center = ((constants.SCREEN_WIDTH/2),(constants.SCREEN_HEIGHT/5))
         screen.blit(TextSurf, TextRect)
 
@@ -117,37 +115,20 @@ def backstory():
         mouse = pygame.mouse.get_pos()
 
         clock = pygame.time.Clock()
+
         pygame.display.update()
-        clock.tick(15)
+        clock.tick(15) 
 
-def backstory():
-    story = True
-    bg = pygame.image.load("Background Story.jpg")
-    while instructions:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                pygame.quit()
-                quit()
-            
-        screen.fill(constants.WHITE)
-        screen.blit(bg, (0,0))
+    # backstory = True 
+    # bg = pygame.image.load("Background_Story.jpg")
+    # while backstory:
+    #     for event in pygame.event.get():
+    #         if event.type == pygame.QUIT:
+    #             pygame.quit()
+    #             quit()
 
-        largeText = pygame.font.Font('freesansbold.ttf',50)
-        TextSurf, TextRect = text_objects("In the Eyes of Amirah", largeText)
-        # Text is centered at the top middle
-        TextRect.center = ((constants.SCREEN_WIDTH/2),(constants.SCREEN_HEIGHT/5))
-        screen.blit(TextSurf, TextRect
-
-        button("INSTRUCTIONS", 150,450,100,50,constants.WHITE,"start")
-        button("QUIT", 550,450,100,50,constants.WHITE,"quit")
-        mouse = pygame.mouse.get_pos()
-
-        clock = pygame.time.Clock()
-        pygame.display.update()
-        clock.tick(15)
 
 def game_instructions():
-<<<<<<< HEAD
     instructions = True
     bg = pygame.image.load("waves.png")
     # rightArrow = pygame.image.load("rightArrow.png")
@@ -159,26 +140,17 @@ def game_instructions():
     # downArrow = pygame.transform.rotate(upArrow, 90)
     # downArrow = pygame.transform.flip(downArrow, False, True)
     while instructions:
-=======
-    instruction = True
-    bg = pygame.image.load("waves.png")
-    while instruction:
->>>>>>> 06a2c081a119a1c3665bd0f7a7d7fb709e1b395c
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
             
         screen.fill(constants.WHITE)
-        largeText = pygame.font.Font('freesansbold.ttf', 50)
-        TextSurf, TextRect = text_objects("Instructions", largeText)
-        TextRect.center = ((constants.SCREEN_WIDTH/2),(constants.SCREEN_HEIGHT/2))
-        screen.blit(TextSurf, TextRect)
-        mouse = pygame.mouse.get_pos()
-
         screen.blit(bg, (0,0))
+
         largeText = pygame.font.Font('freesansbold.ttf',50)
         TextSurf, TextRect = text_objects("Instructions", largeText)
+        # Text is centered at the top middle
         TextRect.center = ((constants.SCREEN_WIDTH/2),(constants.SCREEN_HEIGHT/5))
         screen.blit(TextSurf, TextRect)
 
@@ -190,15 +162,8 @@ def game_instructions():
         pygame.display.update()
         clock.tick(15) 
 
-<<<<<<< HEAD
-
 def main():
     """ Main Program """
-
-=======
-def main():
-    """ Main Program """
->>>>>>> 06a2c081a119a1c3665bd0f7a7d7fb709e1b395c
     pygame.init()
 
     # Set the height and width of screen
@@ -308,6 +273,6 @@ def main():
 
 if __name__ == "__main__":
     game_intro()
-    backstory()
+    game_backstory
     game_instructions()
     main()

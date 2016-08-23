@@ -90,7 +90,10 @@ class Level_01(Level):
                  [platforms.SHELF_PLATFORM, 1950, 150],
                  [platforms.SHELF_PLATFORM, 1950, 410],
                  [platforms.HOME_PLATFORM, 1650, 280],
-                 [platforms.HOME_PLATFORM, 2900, 500]
+                 [platforms.HOME_PLATFORM, 2900, 280],
+                 [platforms.SHELF_PLATFORM, 3175, 150],
+                 [platforms.SHELF_PLATFORM, 3175, 410],
+                 [platforms.HOME_PLATFORM, 4150, 500]
                   ]
 
 
