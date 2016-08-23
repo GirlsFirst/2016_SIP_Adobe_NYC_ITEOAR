@@ -105,16 +105,16 @@ class Level_01(Level):
 
 		# Type of platform, (x,y) location of specified platform
 		# (0,0) is on upper-left
-		level = [[platforms.SHELF_PLATFORM, 700, 150],
-				 [platforms.SHELF_PLATFORM, 700, 410],
+		level = [[platforms.SHELF_PLATFORM, 700, 150], #
+				 [platforms.SHELF_PLATFORM, 700, 410], #
 				 [platforms.HOME_PLATFORM, 400, 500],
 				 [platforms.HOME_PLATFORM, 400, 270],
-				 [platforms.SHELF_PLATFORM, 1950, 150],
-				 [platforms.SHELF_PLATFORM, 1950, 410],
+				 [platforms.SHELF_PLATFORM, 1950, 150], #
+				 [platforms.SHELF_PLATFORM, 1950, 410], #
 				 [platforms.HOME_PLATFORM, 1650, 280],
 				 [platforms.HOME_PLATFORM, 2900, 280],
-				 [platforms.SHELF_PLATFORM, 3175, 150],
-				 [platforms.SHELF_PLATFORM, 3175, 410],
+				 [platforms.SHELF_PLATFORM, 3175, 150], #
+				 [platforms.SHELF_PLATFORM, 3175, 410], #
 				 [platforms.HOME_PLATFORM, 4150, 500]
 				  ]
 
@@ -127,13 +127,16 @@ class Level_01(Level):
 			block.player = self.player
 			self.platform_list.add(block)
 
-		sprites = [[goodSprites.MONEY_SPRITE, 500,500],
-				   [goodSprites.APPLE_SPRITE, 400,400],
-				   [goodSprites.BANDAID_SPRITE, 300,300],
-				   [goodSprites.MED_SPRITE, 200,200],
-				   [goodSprites.BOTTLE_SPRITE, 100,100],
-				   [goodSprites.CAN_SPRITE, 350,350]
-				   ]	
+		# sprites = [[goodSprites.MONEY_SPRITE, 500,500],
+		# 		   [goodSprites.APPLE_SPRITE, 400,400],
+		# 		   [goodSprites.BANDAID_SPRITE, 300,300],
+		# 		   [goodSprites.MED_SPRITE, 200,200],
+		# 		   [goodSprites.BOTTLE_SPRITE, 100,100],
+		# 		   [goodSprites.CAN_SPRITE, 350,350]
+		# 		   ]
+
+		sprites = [[]
+					]	
 
 		for good in sprites:
 			block = goodSprites.Platform(good[0])
