@@ -2,6 +2,7 @@ import pygame
 
 import constants
 import platforms
+import goodSprites
 import player
 
 # levelNow = 0
@@ -10,6 +11,7 @@ class Level():
 
 	# Sprites used in levels
 	platform_list = None
+	goodSprite_list = None
 	enemy_list = None
 
 	background = None
@@ -23,6 +25,7 @@ class Level():
 		Constructs sprites and player
 		'''
 		self.platform_list = pygame.sprite.Group()
+		self.goodSprite_list = pygame.sprite.Group()
 		self.enemy_list = pygame.sprite.Group()
 		self.player = player
 
@@ -30,6 +33,7 @@ class Level():
 		'''
 		Update everything on current level'''
 		self.platform_list.update()
+		self.goodSprite_list.update()
 		self.enemy_list.update()
 
 	def draw(self, screen):
@@ -43,6 +47,7 @@ class Level():
 
 		# Draw all the sprite lists
 		self.platform_list.draw(screen)
+		self.goodSprite_list.draw(screen)
 		self.enemy_list.draw(screen)
 
 	def shift_world(self, shift_x):
@@ -56,6 +61,9 @@ class Level():
 		# Go through all the sprite lists and shift
 		for platform in self.platform_list:
 			platform.rect.x += shift_x
+
+		for goodSprite in self.goodSprite_list:
+			goodSprite.rect.x += shift_x
 
 		for enemy in self.enemy_list:
 			enemy.rect.x += shift_x
@@ -85,15 +93,15 @@ class Level_01(Level):
 
 		# Type of platform, (x,y) location of specified platform
 		# (0,0) is on upper-left
-		level = [[platforms.SHELF_PLATFORM, 700, 150],
-				 [platforms.SHELF_PLATFORM, 700, 410],
-				 [platforms.HOME_PLATFORM, 400, 500],
-				 [platforms.HOME_PLATFORM, 400, 270],
-				 [platforms.SHELF_PLATFORM, 1950, 150],
-				 [platforms.SHELF_PLATFORM, 1950, 410],
-				 [platforms.HOME_PLATFORM, 1650, 280],
-				 [platforms.HOME_PLATFORM, 2900, 500]
-				  ]
+		# level = [[platforms.SHELF_PLATFORM, 700, 150],
+		# 		 [platforms.SHELF_PLATFORM, 700, 410],
+		# 		 [platforms.HOME_PLATFORM, 400, 500],
+		# 		 [platforms.HOME_PLATFORM, 400, 270],
+		# 		 [platforms.SHELF_PLATFORM, 1950, 150],
+		# 		 [platforms.SHELF_PLATFORM, 1950, 410],
+		# 		 [platforms.HOME_PLATFORM, 1650, 280],
+		# 		 [platforms.HOME_PLATFORM, 2900, 500]
+		# 		  ]
 
 		# Type of platform, (x,y) location of specified platform
 		# (0,0) is on upper-left
@@ -118,6 +126,22 @@ class Level_01(Level):
 			block.rect.y = platform[2]
 			block.player = self.player
 			self.platform_list.add(block)
+
+		sprites = [[goodSprites.MONEY_SPRITE, 500,500],
+				   [goodSprites.APPLE_SPRITE, 400,400],
+				   [goodSprites.BANDAID_SPRITE, 300,300],
+				   [goodSprites.MED_SPRITE, 200,200],
+				   [goodSprites.BOTTLE_SPRITE, 100,100],
+				   [goodSprites.CAN_SPRITE, 350,350]
+				   ]	
+
+		for good in sprites:
+			block = goodSprites.Platform(good[0])
+			block.rect.x = good[1]
+			block.rect.y = good[2]
+			block.player = self.player
+			self.goodSprite_list.add(block)
+
 
 		# Add a custom moving platform
 		# block = platforms.MovingPlatform(platforms.STONE_PLATFORM_MIDDLE)
