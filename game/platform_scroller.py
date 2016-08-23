@@ -27,13 +27,15 @@ def button(msg,x,y,w,h,color,action=None):
     if x+w > mouse[0] > x and y+h > mouse[1] > y:
         pygame.draw.rect(screen, color,(x,y,w,h), 5)
         if click[0] == 1 and action != None:
-            if action == "play":
-                main()
+            if action == "start":
+                backstory()
             elif action == "quit":
                 pygame.quit()
                 quit()
             elif action == "instructions":
                 game_instructions()
+            elif action == "play":
+                main()
     else:
         pygame.draw.rect(screen, color,(x,y,w,h), 3)
 
@@ -43,8 +45,6 @@ def button(msg,x,y,w,h,color,action=None):
     screen.blit(textSurf, textRect)
 
 def game_intro():
-
-
     intro = True
     bg = pygame.image.load("start.gif")
 
@@ -73,8 +73,7 @@ def game_intro():
         TextRect.center = ((constants.SCREEN_WIDTH/2),(constants.SCREEN_HEIGHT/2))
         screen.blit(TextSurf, TextRect)
 
-        button("START", 150,450,100,50,constants.WHITE,"play")
-        button("INSTRUCTIONS", 300, 450, 200, 50, constants.WHITE, "instructions")
+        button("START", 150,450,100,50,constants.WHITE,"start")
         button("QUIT", 550,450,100,50,constants.WHITE,"quit")
         mouse = pygame.mouse.get_pos()
 
@@ -85,9 +84,43 @@ def game_intro():
         pygame.display.update()
         clock.tick(15) 
 
+def backstory():
+    story = True
+    bg = pygame.image.load("Background Story.jpg")
+    while instructions:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
+            
+        screen.fill(constants.WHITE)
+        screen.blit(bg, (0,0))
+
+        largeText = pygame.font.Font('freesansbold.ttf',50)
+        TextSurf, TextRect = text_objects("In the Eyes of Amirah", largeText)
+        # Text is centered at the top middle
+        TextRect.center = ((constants.SCREEN_WIDTH/2),(constants.SCREEN_HEIGHT/5))
+        screen.blit(TextSurf, TextRect
+
+        button("INSTRUCTIONS", 150,450,100,50,constants.WHITE,"start")
+        button("QUIT", 550,450,100,50,constants.WHITE,"quit")
+        mouse = pygame.mouse.get_pos()
+
+        clock = pygame.time.Clock()
+        pygame.display.update()
+        clock.tick(15)
+
 def game_instructions():
     instructions = True
-    bg = pygame.image.load("waves.jpg")
+    bg = pygame.image.load("waves.png")
+    # rightArrow = pygame.image.load("rightArrow.png")
+    # leftArrow = pygame.image.load("rightArrow.png")
+    # leftArrow = pygame.transform.flip(leftArrow, True, False)
+    # upArrow = pygame.image.load("rightArrow.png")
+    # upArrow = pygame.transform.rotate(upArrow, 90)
+    # downArrow = pygame.image.load("rightArrow.png")
+    # downArrow = pygame.transform.rotate(upArrow, 90)
+    # downArrow = pygame.transform.flip(downArrow, False, True)
     while instructions:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -103,7 +136,7 @@ def game_instructions():
         TextRect.center = ((constants.SCREEN_WIDTH/2),(constants.SCREEN_HEIGHT/5))
         screen.blit(TextSurf, TextRect)
 
-        button("START", 150,450,100,50,constants.WHITE,"play")
+        button("PLAY", 150,450,100,50,constants.WHITE,"play")
         button("QUIT", 550,450,100,50,constants.WHITE,"quit")
         mouse = pygame.mouse.get_pos()
 
@@ -111,29 +144,11 @@ def game_instructions():
         pygame.display.update()
         clock.tick(15) 
 
-def game_intro():
-    intro = True 
-    while intro: 
-            for event in pygame.event.get():
-                print(event)
-                if event.type == pygame.QUIT:
-                    pygame.quit()
-                    quit()
-            gameDisplay.fill(white)
-            largeText = pygame.font.Font('freesansbold.ttf', 115)      
-            TextSurf, TextRect = text_objects("In the Eyes of a Refugee", largeText)
-            TextRect.center = ((display_width/2),(display_height/2))
-            gameDisplay.blit(TextSurf, TextRect)
-            pygame.display.update()
-            clock.tick(15)
+
 def main():
-<<<<<<< HEAD
     """ Main Program """
-    
-=======
-    
+
     pygame.init()
->>>>>>> 43ed7d09558bd1f0fb3853a67b130605b33823b8
 
     # Set the height and width of screen
     size = [constants.SCREEN_WIDTH, constants.SCREEN_HEIGHT]
@@ -226,6 +241,7 @@ def main():
         # ALL CODE TO DRAW SHOULD GO BELOW THIS COMMENT
         current_level.draw(screen)
         active_sprite_list.draw(screen)
+        # collideSpriteList.draw(screen)
 
         # ALL CODE TO DRAW SHOULD GO ABOVE THIS COMMENT
 
