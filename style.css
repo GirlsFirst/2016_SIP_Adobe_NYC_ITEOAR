@@ -297,6 +297,8 @@ a:visited {
   font-family: 'Hind', sans-serif;
   text-align: center;
   color: white;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 #interactive {
   color: white;
