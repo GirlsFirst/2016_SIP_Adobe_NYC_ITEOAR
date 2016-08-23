@@ -82,7 +82,7 @@ class Level_01(Level):
 		# levelNow =
 
 
-<<<<<<< HEAD
+
 		# Type of platform, (x,y) location of specified platform
 		# (0,0) is on upper-left
 		level = [[platforms.SHELF_PLATFORM, 700, 150],
@@ -94,22 +94,21 @@ class Level_01(Level):
 				 [platforms.HOME_PLATFORM, 1650, 280],
 				 [platforms.HOME_PLATFORM, 2900, 500]
 				  ]
-=======
-        # Type of platform, (x,y) location of specified platform
-        # (0,0) is on upper-left
-        level = [[platforms.SHELF_PLATFORM, 700, 150],
-                 [platforms.SHELF_PLATFORM, 700, 410],
-                 [platforms.HOME_PLATFORM, 400, 500],
-                 [platforms.HOME_PLATFORM, 400, 270],
-                 [platforms.SHELF_PLATFORM, 1950, 150],
-                 [platforms.SHELF_PLATFORM, 1950, 410],
-                 [platforms.HOME_PLATFORM, 1650, 280],
-                 [platforms.HOME_PLATFORM, 2900, 280],
-                 [platforms.SHELF_PLATFORM, 3175, 150],
-                 [platforms.SHELF_PLATFORM, 3175, 410],
-                 [platforms.HOME_PLATFORM, 4150, 500]
-                  ]
->>>>>>> bd6d541582b143cf16c13ffd0116830765127abd
+
+		# Type of platform, (x,y) location of specified platform
+		# (0,0) is on upper-left
+		level = [[platforms.SHELF_PLATFORM, 700, 150],
+				 [platforms.SHELF_PLATFORM, 700, 410],
+				 [platforms.HOME_PLATFORM, 400, 500],
+				 [platforms.HOME_PLATFORM, 400, 270],
+				 [platforms.SHELF_PLATFORM, 1950, 150],
+				 [platforms.SHELF_PLATFORM, 1950, 410],
+				 [platforms.HOME_PLATFORM, 1650, 280],
+				 [platforms.HOME_PLATFORM, 2900, 280],
+				 [platforms.SHELF_PLATFORM, 3175, 150],
+				 [platforms.SHELF_PLATFORM, 3175, 410],
+				 [platforms.HOME_PLATFORM, 4150, 500]
+				  ]
 
 
 		# Go through the array above and add platforms
