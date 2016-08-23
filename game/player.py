@@ -19,6 +19,8 @@ class Player(pygame.sprite.Sprite):
     # Holds images to present illusion of animation
     walking_frames_l = []
     walking_frames_r = []
+    walking_frames_bl = []
+    walking_frames_br = []
 
     # What direction is the player facing?
     direction = "R"
@@ -52,49 +54,49 @@ class Player(pygame.sprite.Sprite):
         #     self.walking_frames_r.append(image)
         #     self.walking_frames_l.append(image)
 
-        # def player2 (self):
+        # def person (self):
         sprite_sheet1 = SpriteSheet("spriteStand.png")
         image = sprite_sheet1.get_image(34, 19, 32, 73)
-        image = pygame.transform.scale2x(image)
+        image = pygame.transform.scale(image,(48,110))
         self.walking_frames_r.append(image)
         sprite_sheet2 = SpriteSheet("spriteWalkL2.png")
         image = sprite_sheet2.get_image(34, 19, 32, 73)
-        image = pygame.transform.scale2x(image)
+        image = pygame.transform.scale(image,(48,110))
         self.walking_frames_r.append(image)
         sprite_sheet3 = SpriteSheet("spriteWalkL1.png")
         image = sprite_sheet3.get_image(34, 19, 32, 73)
-        image = pygame.transform.scale2x(image)
+        image = pygame.transform.scale(image,(48,110))
         self.walking_frames_r.append(image)
         sprite_sheet4 = SpriteSheet("spriteWalkR2.png")
         image = sprite_sheet4.get_image(34, 19, 32, 73)
-        image = pygame.transform.scale2x(image)
+        image = pygame.transform.scale(image,(48,110))
         self.walking_frames_r.append(image)
         sprite_sheet5 = SpriteSheet("spriteWalkR1.png")
         image = sprite_sheet5.get_image(34, 19, 32, 73)
-        image = pygame.transform.scale2x(image)
+        image = pygame.transform.scale(image,(48,110))
         self.walking_frames_r.append(image)
 
         # Load all the right facing images, then flip them
         # to face left.
         image = sprite_sheet1.get_image(34, 19, 32, 73)
         image = pygame.transform.flip(image, True, False)
-        image = pygame.transform.scale2x(image)
+        image = pygame.transform.scale(image,(48,110))
         self.walking_frames_l.append(image)
         image = sprite_sheet2.get_image(34, 19, 32, 73)
         image = pygame.transform.flip(image, True, False)
-        image = pygame.transform.scale2x(image)
+        image = pygame.transform.scale(image,(48,110))
         self.walking_frames_l.append(image)
         image = sprite_sheet3.get_image(34, 19, 32, 73)
         image = pygame.transform.flip(image, True, False)
-        image = pygame.transform.scale2x(image)
+        image = pygame.transform.scale(image,(48,110))
         self.walking_frames_l.append(image)
         image = sprite_sheet4.get_image(34, 19, 32, 73)
         image = pygame.transform.flip(image, True, False)
-        image = pygame.transform.scale2x(image)
+        image = pygame.transform.scale(image,(48,110))
         self.walking_frames_l.append(image)
         image = sprite_sheet5.get_image(34, 19, 32, 73)
         image = pygame.transform.flip(image, True, False)
-        image = pygame.transform.scale2x(image)
+        image = pygame.transform.scale(image,(48,110))
         self.walking_frames_l.append(image)
 
         # Call the parent's constructor
@@ -109,6 +111,36 @@ class Player(pygame.sprite.Sprite):
         # Set a reference to rect
         self.rect = self.image.get_rect()
 
+        # def boat(self):
+        # #         """ Constructor function """
+
+        # #         # Call the parent's constructor
+        # #         pygame.sprite.Sprite.__init__(self)
+
+        #     # Load all the right facing images into a list
+        #     sprite_sheet1 = SpriteSheet("boat0.png")
+        #     image = sprite_sheet1.get_image(29,165,230,49)
+        #     self.walking_frames_br.append(image)
+        #     self.walking_frames_bl.append(image)
+        #     sprite_sheet2 = SpriteSheet("boat1.png")
+        #     image = sprite_sheet2.get_image(30,168,228,42)
+        #     self.walking_frames_br.append(image)
+        #     self.walking_frames_bl.append(image)
+        #     sprite_sheet3 = SpriteSheet("boat2.png")
+        #     image = sprite_sheet3.get_image(29,165,230,49)
+        #     self.walking_frames_br.append(image)
+        #     self.walking_frames_bl.append(image)
+        #     #add one more?
+
+        #     pygame.sprite.Sprite.__init__(self)
+
+        #     # Set the image the player starts with
+        #     self.image = self.walking_frames_br[0]
+
+        #     # Set a referance to the image rect.
+        #     self.rect = self.image.get_rect()
+
+
     def update(self):
         '''
         Move player
@@ -121,10 +153,14 @@ class Player(pygame.sprite.Sprite):
         pos = self.rect.x + self.level.world_shift
         if self.direction == "R":
             frame = (pos // 30) % len(self.walking_frames_r)
+            # frame = (pos // 30) % len(self.walking_frames_br)
             self.image = self.walking_frames_r[frame]
+            # self.image = self.walking_frames_br[frame]
         else:
             frame = (pos // 30) % len(self.walking_frames_l)
+            # frame = (pos // 30) % len(self.walking_frames_bl)
             self.image = self.walking_frames_l[frame]
+            # self.image = self.walking_frames_bl[frame]
 
         # See if we hit anything
         block_hit_list = pygame.sprite.spritecollide(self, self.level.platform_list, False)
@@ -203,55 +239,28 @@ class Player(pygame.sprite.Sprite):
         '''
         self.change_x = 0
 
-# class Boat(pygame.sprite.Sprite):
-#     """ This class represents the bar at the bottom that the player
-#     controls. """
+    # def Boat(self):
+    #     """ This class represents the bar at the bottom that the player
+    #     controls. """
 
-#     # -- Attributes
-#     # Set speed vector of player
-#     change_x = 0
-#     # change_y = 0
+    #     # -- Attributes
+    #     # Set speed vector of player
+    #     change_x = 0
+    #     # change_y = 0
 
-#     # This holds all the images for the animated walk left/right
-#     # of our player
-#     walking_frames_bl = []
-#     walking_frames_br = []
+    #     # This holds all the images for the animated walk left/right
+    #     # of our player
+    #     walking_frames_bl = []
+    #     walking_frames_br = []
 
-#     # What direction is the player facing?
-#     direction = "R"
+    #     # What direction is the player facing?
+    #     direction = "R"
 
-#     # List of sprites we can bump against
-#     level = None
+    #     # List of sprites we can bump against
+    #     level = None
 
-#     # -- Methods
-#     def __init__(self):
-#         """ Constructor function """
-
-#         # Call the parent's constructor
-#         pygame.sprite.Sprite.__init__(self)
-
-#         # Load all the right facing images into a list
-#         sprite_sheet1 = SpriteSheet("boat0.png")
-#         image = sprite_sheet1.get_image(29,165,230,49)
-#         self.walking_frames_br.append(image)
-#         self.walking_frames_bl.append(image)
-#         sprite_sheet2 = SpriteSheet("boat1.png")
-#         image = sprite_sheet2.get_image(30,168,228,42)
-#         self.walking_frames_br.append(image)
-#         self.walking_frames_bl.append(image)
-#         sprite_sheet3 = SpriteSheet("boat2.png")
-#         image = sprite_sheet3.get_image(29,165,230,49)
-#         self.walking_frames_br.append(image)
-#         self.walking_frames_bl.append(image)
-#         #add one more?
-
-
-#         # Set the image the player starts with
-#         self.image = self.walking_frames_br[0]
-
-#         # Set a referance to the image rect.
-#         self.rect = self.image.get_rect()
-
+        # -- Methods
+        
 #     def update(self):
 #         """ Move the player. """
 #         # Gravity
