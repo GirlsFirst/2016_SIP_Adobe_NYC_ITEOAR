@@ -37,7 +37,10 @@ def button(msg,x,y,w,h,color,action=None):
                 game_instructions()
             elif action == "play":
                 main()
+<<<<<<< HEAD
+=======
             
+>>>>>>> 06a2c081a119a1c3665bd0f7a7d7fb709e1b395c
     else:
         pygame.draw.rect(screen, color,(x,y,w,h), 3)
     # pygame.font.init()
@@ -117,10 +120,50 @@ def backstory():
         pygame.display.update()
         clock.tick(15)
 
+def backstory():
+    story = True
+    bg = pygame.image.load("Background Story.jpg")
+    while instructions:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
+            
+        screen.fill(constants.WHITE)
+        screen.blit(bg, (0,0))
+
+        largeText = pygame.font.Font('freesansbold.ttf',50)
+        TextSurf, TextRect = text_objects("In the Eyes of Amirah", largeText)
+        # Text is centered at the top middle
+        TextRect.center = ((constants.SCREEN_WIDTH/2),(constants.SCREEN_HEIGHT/5))
+        screen.blit(TextSurf, TextRect
+
+        button("INSTRUCTIONS", 150,450,100,50,constants.WHITE,"start")
+        button("QUIT", 550,450,100,50,constants.WHITE,"quit")
+        mouse = pygame.mouse.get_pos()
+
+        clock = pygame.time.Clock()
+        pygame.display.update()
+        clock.tick(15)
+
 def game_instructions():
+<<<<<<< HEAD
+    instructions = True
+    bg = pygame.image.load("waves.png")
+    # rightArrow = pygame.image.load("rightArrow.png")
+    # leftArrow = pygame.image.load("rightArrow.png")
+    # leftArrow = pygame.transform.flip(leftArrow, True, False)
+    # upArrow = pygame.image.load("rightArrow.png")
+    # upArrow = pygame.transform.rotate(upArrow, 90)
+    # downArrow = pygame.image.load("rightArrow.png")
+    # downArrow = pygame.transform.rotate(upArrow, 90)
+    # downArrow = pygame.transform.flip(downArrow, False, True)
+    while instructions:
+=======
     instruction = True
     bg = pygame.image.load("waves.png")
     while instruction:
+>>>>>>> 06a2c081a119a1c3665bd0f7a7d7fb709e1b395c
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
@@ -147,8 +190,15 @@ def game_instructions():
         pygame.display.update()
         clock.tick(15) 
 
+<<<<<<< HEAD
+
 def main():
     """ Main Program """
+
+=======
+def main():
+    """ Main Program """
+>>>>>>> 06a2c081a119a1c3665bd0f7a7d7fb709e1b395c
     pygame.init()
 
     # Set the height and width of screen
