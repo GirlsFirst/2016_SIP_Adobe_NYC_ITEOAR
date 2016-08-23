@@ -306,12 +306,19 @@ a:visited {
 /*Bibliography stuff*/
 #photos {
   color: white;
+  text-align: left;
+  padding-left: 50px;
+
 }
 #data {
   color: white;
+  text-align: left;
 }
 .heading3 {
   color: white;
+  text-align: left;
+  padding-left: 50px;
+
 }
 /*index stuff*/
 #CheckOutGame {
