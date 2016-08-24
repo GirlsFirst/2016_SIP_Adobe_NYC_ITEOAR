@@ -136,15 +136,6 @@ def main():
     Main Program
     '''
 
-    # Set the height and width of screen
-    size = [constants.SCREEN_WIDTH, constants.SCREEN_HEIGHT]
-    screen = pygame.display.set_mode(size)
-
-    pygame.display.set_caption("Platformer with sprite sheets")
-
-    # Create player
-    player = Player()
-
     # Create all levels
     level_list = []
     level_list.append(levels.Level_01(player))
