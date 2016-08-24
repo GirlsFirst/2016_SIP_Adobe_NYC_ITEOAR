@@ -1,6 +1,6 @@
-"""
+'''
 Pull sprites from a sprite sheet
-"""
+'''
 import pygame
 
 import constants

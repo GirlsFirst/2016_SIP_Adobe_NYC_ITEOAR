@@ -5,7 +5,6 @@ import platforms
 import goodSprites
 import player
 
-# levelNow = 0
 
 class Level():
 
@@ -31,7 +30,8 @@ class Level():
 
 	def update(self):
 		'''
-		Update everything on current level'''
+		Update everything on current level
+		'''
 		self.platform_list.update()
 		self.goodSprite_list.update()
 		self.enemy_list.update()
@@ -71,12 +71,10 @@ class Level():
 # Create platforms for the level
 class Level_01(Level):
 
-	#levelNow = 1
-
 	def __init__(self, player):
-		# '''
-		# Create level 1
-		# '''
+		'''
+		Create level 1
+		'''
 
 		# Call the parent constructor
 		Level.__init__(self, player)
@@ -147,18 +145,6 @@ class Level_01(Level):
 			self.goodSprite_list.add(block)
 
 
-		# Add a custom moving platform
-		# block = platforms.MovingPlatform(platforms.STONE_PLATFORM_MIDDLE)
-		# block.rect.x = 1350
-		# block.rect.y = 280
-		# block.boundary_left = 1350
-		# block.boundary_right = 1600
-		# block.change_x = 1
-		# block.player = self.player
-		# block.level = self
-		# self.platform_list.add(block)
-
-
 class Level_02(Level):
 
 
@@ -174,12 +160,11 @@ class Level_02(Level):
 		self.background.set_colorkey(constants.WHITE)
 		self.level_limit = -4200
 
-		# levelNow = 2
 
 
 class Level_03(Level):
 
-	#levelNow = 3
+
 	def __init__(self, player):
 		'''
 		Create level 3
@@ -191,5 +176,3 @@ class Level_03(Level):
 		self.background = pygame.image.load("Boat Level.png").convert()
 		self.background.set_colorkey(constants.WHITE)
 		self.level_limit = -4200
-
-		# levelNow = 3

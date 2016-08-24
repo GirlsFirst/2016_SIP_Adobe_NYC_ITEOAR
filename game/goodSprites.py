@@ -1,6 +1,6 @@
-"""
+'''
 Manage good sprites
-"""
+'''
 import pygame
 
 from spritesheet_functions import SpriteSheet
@@ -26,13 +26,12 @@ class Platform(pygame.sprite.Sprite):
 		pygame.sprite.Sprite.__init__(self)
 
 		sprite_sheet = SpriteSheet("goodSprites.png")
+		
 		# Use sprite sheet image for platforms
 		self.image = sprite_sheet.get_image(sprite_sheet_data[0],
 											sprite_sheet_data[1],
 											sprite_sheet_data[2],
 											sprite_sheet_data[3])
-
-		# self.image = pygame.transform.scale2x(self.image)
 
 		if sprite_sheet_data == APPLE_SPRITE:
 			self.image = pygame.transform.scale2x(self.image)

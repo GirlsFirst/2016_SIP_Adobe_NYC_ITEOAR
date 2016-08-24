@@ -2,7 +2,6 @@ import pygame
 import constants
 import levels
 from player import Player
-# from player import Boat
 
 pygame.init()
 
@@ -14,7 +13,7 @@ pygame.display.set_caption("In the Eyes of a Refugee")
 
 pygame.font.init()
 
-plauer = Player()
+player = Player()
 
 # Screen Menu Stuff
 def text_objects(text, font):
@@ -25,7 +24,7 @@ def button(msg,x,y,w,h,color,action=None):
 
     mouse = pygame.mouse.get_pos()
     click = pygame.mouse.get_pressed()
-    # print(click)
+    
     if x+w > mouse[0] > x and y+h > mouse[1] > y:
         pygame.draw.rect(screen, color,(x,y,w,h), 5)
         if click[0] == 1 and action != None:
@@ -64,9 +63,7 @@ def game_intro():
 
         mouse = pygame.mouse.get_pos()
 
-        # print(mouse)
                 
-        # screen.fill((0,0,0))
         screen.blit(bg, (0,0))
         largeText = pygame.font.Font('freesansbold.ttf',50)
         TextSurf, TextRect = text_objects("In the Eyes of a Refugee", largeText)
@@ -78,7 +75,6 @@ def game_intro():
         button("QUIT", 550,450,100,50,constants.WHITE,"quit")
         mouse = pygame.mouse.get_pos()
 
-        # print(mouse)
 
         clock = pygame.time.Clock()
 
@@ -114,7 +110,7 @@ def game_instructions():
 
     mouse = pygame.mouse.get_pos()
     click = pygame.mouse.get_pressed()
-    # print(click)
+    
     if x+w > mouse[0] > x and y+h > mouse[1] > y:
         pygame.draw.rect(screen, color,(x,y,w,h), 5)
         if click[0] == 1 and action != None:
@@ -128,7 +124,6 @@ def game_instructions():
 
     else:
         pygame.draw.rect(screen, color,(x,y,w,h), 3)
-    # pygame.font.init()
 
     smallText = pygame.font.Font("freesansbold.ttf",20)
     textSurf, textRect = text_objects(msg, smallText)
@@ -137,8 +132,9 @@ def game_instructions():
 
 def main():
 
-    """ Main Program """
-    pygame.init()
+    '''
+    Main Program
+    '''
 
     # Set the height and width of screen
     size = [constants.SCREEN_WIDTH, constants.SCREEN_HEIGHT]
@@ -150,18 +146,9 @@ def main():
     player = Player()
 
     # Create all levels
-
-    """ Main Program """
-    # Set the height and width of the screen
-    # Create the player
-    # Create all the levels
-
     level_list = []
-    # levelNow = 1
     level_list.append(levels.Level_01(player))
-    # levelNow = 2
     level_list.append(levels.Level_02(player))
-    # levelNow = 3
     level_list.append(levels.Level_03(player))
 
     # Set the current level
@@ -231,7 +218,6 @@ def main():
         # ALL CODE TO DRAW SHOULD GO BELOW THIS COMMENT
         current_level.draw(screen)
         active_sprite_list.draw(screen)
-        # collideSpriteList.draw(screen)
 
         # ALL CODE TO DRAW SHOULD GO ABOVE THIS COMMENT
 
