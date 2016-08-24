@@ -85,26 +85,7 @@ class Level_01(Level):
 		self.background.set_colorkey(constants.WHITE)
 		self.level_limit = -4200
 
-		# player.image = "girl"
 
-		# levelNow =
-
-
-
-		# Type of platform, (x,y) location of specified platform
-		# (0,0) is on upper-left
-		# level = [[platforms.SHELF_PLATFORM, 700, 150],
-		# 		 [platforms.SHELF_PLATFORM, 700, 410],
-		# 		 [platforms.HOME_PLATFORM, 400, 500],
-		# 		 [platforms.HOME_PLATFORM, 400, 270],
-		# 		 [platforms.SHELF_PLATFORM, 1950, 150],
-		# 		 [platforms.SHELF_PLATFORM, 1950, 410],
-		# 		 [platforms.HOME_PLATFORM, 1650, 280],
-		# 		 [platforms.HOME_PLATFORM, 2900, 500]
-		# 		  ]
-
-		# Type of platform, (x,y) location of specified platform
-		# (0,0) is on upper-left
 		level = [[platforms.SHELF_PLATFORM, 700, 150], #
 				 [platforms.SHELF_PLATFORM, 700, 410], #
 				 [platforms.HOME_PLATFORM, 400, 500],
@@ -127,15 +108,35 @@ class Level_01(Level):
 			block.player = self.player
 			self.platform_list.add(block)
 
-		# sprites = [[goodSprites.MONEY_SPRITE, 500,500],
-		# 		   [goodSprites.APPLE_SPRITE, 400,400],
-		# 		   [goodSprites.BANDAID_SPRITE, 300,300],
-		# 		   [goodSprites.MED_SPRITE, 200,200],
-		# 		   [goodSprites.BOTTLE_SPRITE, 100,100],
-		# 		   [goodSprites.CAN_SPRITE, 350,350]
-		# 		   ]
 
-		sprites = [[]
+		sprites = [[goodSprites.APPLE_SPRITE, 730,380], # apple BOTTOM ------ FIRST BOTTOM
+				   [goodSprites.APPLE_SPRITE, 750, 380],
+				   [goodSprites.APPLE_SPRITE, 800, 380],
+				   [goodSprites.APPLE_SPRITE, 810, 380],
+				   [goodSprites.BOTTLE_SPRITE, 1000,365], # bottle BOTTOM
+				   [goodSprites.BOTTLE_SPRITE, 1200, 365],
+				   [goodSprites.CAN_SPRITE, 1440, 393], # can BOTTOM
+				   [goodSprites.CAN_SPRITE, 1004, 133], # can TOP ------ FIRST TOP
+				   [goodSprites.CAN_SPRITE, 1130, 133],
+				   [goodSprites.BOTTLE_SPRITE, 1420, 105], # bottle TOP
+				   [goodSprites.BOTTLE_SPRITE, 1430, 105],
+				   [goodSprites.MED_SPRITE, 2600, 378], # medicine BOTTOM ------ SECOND BOTTOM
+				   [goodSprites.MED_SPRITE, 2300, 378],
+				   [goodSprites.BANDAID_SPRITE, 2123, 372], # bandaid BOTTOM
+				   [goodSprites.BANDAID_SPRITE, 2200, 372],
+				   [goodSprites.BANDAID_SPRITE, 2140, 372],
+				   [goodSprites.BANDAID_SPRITE, 2370, 372],
+				   [goodSprites.BANDAID_SPRITE, 2380, 372],
+				   [goodSprites.MONEY_SPRITE, 2100, 130], # money TOP ------ SECOND TOP
+				   [goodSprites.MONEY_SPRITE, 2370, 130],
+				   [goodSprites.BOTTLE_SPRITE, 3350, 365], # ------ THIRD BOTTOM
+				   [goodSprites.BOTTLE_SPRITE, 3300, 365],
+				   [goodSprites.BOTTLE_SPRITE, 3600, 365],
+				   [goodSprites.APPLE_SPRITE, 3900, 380],
+				   [goodSprites.CAN_SPRITE, 3700, 133], # ------ THIRD TOP
+				   [goodSprites.CAN_SPRITE, 3800, 133],
+				   [goodSprites.CAN_SPRITE, 3780, 133],
+				   [goodSprites.CAN_SPRITE, 3320, 133]
 					]	
 
 		for good in sprites:
